@@ -10,7 +10,8 @@
     
     For more details, please refer to the LICENSE section.
 -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Text to Speech Converter</title>
     <meta name="google-adsense-account" content="ca-pub-9780071536823195">
@@ -23,13 +24,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
+            --background-color: #121212;
+            --text-color: #E0E0E0;
             font-family: 'Roboto', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
         }
+
+        body[data-theme="light"] {
+            --background-color: #FFFFFF;
+            --text-color: #000000;
+        }
+
         .container {
-            background-color: #1E1E1E; /* Secondary background */
+            background-color: #1E1E1E;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             padding: 20px;
@@ -37,6 +46,7 @@
             margin: auto;
             transition: background-color 0.3s;
         }
+
         button {
             border-radius: 8px;
             transition: background-color 0.3s, transform 0.2s;
@@ -95,15 +105,6 @@
             text-align: center;
             color: #B0B0B0; /* Secondary text color */
         }
-        :root {
-            --background-color: #121212; /* Dark background default */
-            --text-color: #E0E0E0; /* Text color default */
-        }
-
-        [data-theme="light"] {
-            --background-color: #FFFFFF; /* Light background */
-            --text-color: #000000; /* Text color for light mode */
-        }
 
         /* Additional styles for inputs, sliders, and selects */
         input, select, textarea {
@@ -118,7 +119,7 @@
         }
     </style>
 </head>
-<body data-theme={darkMode ? 'dark' : 'light'}>
+<body>
     <div id="root"></div>
     <script type="text/babel">
         const { useState, useEffect } = React;
@@ -156,6 +157,10 @@
                 }
             }, []);
 
+            useEffect(() => {
+                document.body.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+            }, []);
+
             const handleTextChange = (e) => setText(e.target.value);
             const handleRateChange = (e) => setRate(e.target.value);
             const handleVolumeChange = (e) => setVolume(e.target.value);
@@ -170,7 +175,7 @@
             const handleSettingsToggle = () => setSettingsVisible(!settingsVisible);
             const handleDarkModeToggle = () => {
                 setDarkMode(!darkMode);
-                document.body.setAttribute('data-theme', !darkMode ? 'light' : 'dark');
+                document.body.setAttribute('data-theme', !darkMode ? 'dark' : 'light');
             };
 
             const handlePlay = () => {
@@ -209,178 +214,178 @@
             };
 
             return (
-                <>
-                    <div className={`container mx-auto p-6 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} shadow-lg rounded-lg mt-10`}>
-                        <div className="flex justify-between items-center mb-6">
-                            <h1 className="text-3xl font-bold">Text to Speech Converter</h1>
-                            <button onClick={handleDarkModeToggle} className="btn-dark-mode px-4 py-2 rounded-lg">
-                                {darkMode ? 'Light Mode' : 'Dark Mode'}
+                <div className={`container mx-auto p-6 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} shadow-lg rounded-lg mt-10`}>
+                    <div className="flex justify-between items-center mb-6">
+                        <h1 className="text-3xl font-bold">Text to Speech Converter</h1>
+                        <button onClick={handleDarkModeToggle} className="btn-dark-mode px-4 py-2 rounded-lg">
+                            {darkMode ? 'Light Mode' : 'Dark Mode'}
+                        </button>
+                    </div>
+                    <div className="mb-6">
+                        <textarea
+                            className={`w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'}`}
+                            rows="4"
+                            placeholder="Enter text here..."
+                            value={text}
+                            onChange={handleTextChange}
+                            onKeyPress={handleKeyPress}
+                        ></textarea>
+                    </div>
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center space-x-4">
+                            <button onClick={handlePlay} className="btn-play px-4 py-2 rounded-lg">
+                                {loading ? (
+                                    <i className="fas fa-spinner fa-spin"></i>
+                                ) : (
+                                    'Play'
+                                )}
+                            </button>
+                            <button onClick={handleStop} className="btn-stop px-4 py-2 rounded-lg">
+                                Stop
+                            </button>
+                            <button onClick={handleClear} className="btn-clear px-4 py-2 rounded-lg">
+                                Clear
                             </button>
                         </div>
-                        <div className="mb-6">
-                            <textarea
-                                className={`w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${darkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-900'}`}
-                                rows="4"
-                                placeholder="Enter text here..."
-                                value={text}
-                                onChange={handleTextChange}
-                                onKeyPress={handleKeyPress}
-                            ></textarea>
+                        <div className="flex items-center space-x-2">
+                            <label className="text-gray-700 font-medium">Live TTS</label>
+                            <input
+                                type="checkbox"
+                                className="form-checkbox h-5 w-5 text-blue-600"
+                                checked={liveTTS}
+                                onChange={handleLiveTTSChange}
+                            />
                         </div>
-                        <div className="flex items-center justify-between mb-6">
-                            <div className="flex items-center space-x-4">
-                                <button onClick={handlePlay} className="btn-play px-4 py-2 rounded-lg">
-                                    {loading ? (
-                                        <i className="fas fa-spinner fa-spin"></i>
-                                    ) : (
-                                        'Play'
-                                    )}
-                                </button>
-                                <button onClick={handleStop} className="btn-stop px-4 py-2 rounded-lg">
-                                    Stop
-                                </button>
-                                <button onClick={handleClear} className="btn-clear px-4 py-2 rounded-lg">
-                                    Clear
-                                </button>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <label className="text-gray-700 font-medium">Live TTS</label>
+                    </div>
+                    <button onClick={handleSettingsToggle} className="btn-settings px-4 py-2 rounded-lg mb-6">
+                        {settingsVisible ? 'Hide Settings' : 'Show Settings'}
+                    </button>
+                    {settingsVisible && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label className="block mb-2 font-medium">Rate: {rate}</label>
                                 <input
-                                    type="checkbox"
-                                    className="form-checkbox h-5 w-5 text-blue-600"
-                                    checked={liveTTS}
-                                    onChange={handleLiveTTSChange}
+                                    type="range"
+                                    min="0.5"
+                                    max="2"
+                                    step="0.1"
+                                    value={rate}
+                                    onChange={handleRateChange}
+                                    className="w-full"
                                 />
                             </div>
-                        </div>
-                        <button onClick={handleSettingsToggle} className="btn-settings px-4 py-2 rounded-lg mb-6">
-                            {settingsVisible ? 'Hide Settings' : 'Show Settings'}
-                        </button>
-                        {settingsVisible && (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label className="block mb-2 font-medium">Rate: {rate}</label>
-                                    <input
-                                        type="range"
-                                        min="0.5"
-                                        max="2"
-                                        step="0.1"
-                                        value={rate}
-                                        onChange={handleRateChange}
-                                        className="w-full"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Volume: {volume}</label>
-                                    <input
-                                        type="range"
-                                        min="0"
-                                        max="1"
-                                        step="0.1"
-                                        value={volume}
-                                        onChange={handleVolumeChange}
-                                        className="w-full"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Pitch: {pitch}</label>
-                                    <input
-                                        type="range"
-                                        min="0"
-                                        max="2"
-                                        step="0.1"
-                                        value={pitch}
-                                        onChange={handlePitchChange}
-                                        className="w-full"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Tone: {tone}</label>
-                                    <input
-                                        type="range"
-                                        min="0"
-                                        max="2"
-                                        step="0.1"
-                                        value={tone}
-                                        onChange={handleToneChange}
-                                        className="w-full"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Modulation: {modulation}</label>
-                                    <input
-                                        type="range"
-                                        min="0"
-                                        max="2"
-                                        step="0.1"
-                                        value={modulation}
-                                        onChange={handleModulationChange}
-                                        className="w-full"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Timbre: {timbre}</label>
-                                    <input
-                                        type="range"
-                                        min="0"
-                                        max="2"
-                                        step="0.1"
-                                        value={timbre}
-                                        onChange={handleTimbreChange}
-                                        className="w-full"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Accent</label>
-                                    <select
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        value={accent}
-                                        onChange={handleAccentChange}
-                                    >
-                                        <option value="en-US">English (US)</option>
-                                        <option value="en-GB">English (UK)</option>
-                                        <option value="en-AU">English (Australia)</option>
-                                        <option value="en-IN">English (India)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Emotion</label>
-                                    <select
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        value={emotion}
-                                        onChange={handleEmotionChange}
-                                    >
-                                        <option value="neutral">Neutral</option>
-                                        <option value="happy">Happy</option>
-                                        <option value="sad">Sad</option>
-                                        <option value="angry">Angry</option>
-                                        <option value="excited">Excited</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-medium">Voice</label>
-                                    <select
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        value={voice}
-                                        onChange={handleVoiceChange}
-                                    >
-                                        {voices.map((v, index) => (
-                                            <option key={index} value={v.name}>{v.name}</option>
-                                        ))}
-                                    </select>
-                                </div>
+                            <div>
+                                <label className="block mb-2 font-medium">Volume: {volume}</label>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="1"
+                                    step="0.1"
+                                    value={volume}
+                                    onChange={handleVolumeChange}
+                                    className="w-full"
+                                />
                             </div>
-                        )}
-                        {error && <div className="text-red-500 mb-6">{error}</div>}
-                        <footer className="text-center mt-6">
-                            <p className="text-sm text-gray-500">&copy; 2024 @0bito404.dev. All rights reserved.</p>
-                        </footer>
-                    </div>
-                </>
+                            <div>
+                                <label className="block mb-2 font-medium">Pitch: {pitch}</label>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="2"
+                                    step="0.1"
+                                    value={pitch}
+                                    onChange={handlePitchChange}
+                                    className="w-full"
+                                />
+                            </div>
+                            <div>
+                                <label className="block mb-2 font-medium">Tone: {tone}</label>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="2"
+                                    step="0.1"
+                                    value={tone}
+                                    onChange={handleToneChange}
+                                    className="w-full"
+                                />
+                            </div>
+                            <div>
+                                <label className="block mb-2 font-medium">Modulation: {modulation}</label>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="2"
+                                    step="0.1"
+                                    value={modulation}
+                                    onChange={handleModulationChange}
+                                    className="w-full"
+                                />
+                            </div>
+                            <div>
+                                <label className="block mb-2 font-medium">Timbre: {timbre}</label>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="2"
+                                    step="0.1"
+                                    value={timbre}
+                                    onChange={handleTimbreChange}
+                                    className="w-full"
+                                />
+                            </div>
+                            <div>
+                                <label className="block mb-2 font-medium">Accent</label>
+                                <select
+                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value={accent}
+                                    onChange={handleAccentChange}
+                                >
+                                    <option value="en-US">English (US)</option>
+                                    <option value="en-GB">English (UK)</option>
+                                    <option value="en-AU">English (Australia)</option>
+                                    <option value="en-IN">English (India)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block mb-2 font-medium">Emotion</label>
+                                <select
+                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value={emotion}
+                                    onChange={handleEmotionChange}
+                                >
+                                    <option value="neutral">Neutral</option>
+                                    <option value="happy">Happy</option>
+                                    <option value="sad">Sad</option>
+                                    <option value="angry">Angry</option>
+                                    <option value="excited">Excited</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block mb-2 font-medium">Voice</label>
+                                <select
+                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value={voice}
+                                    onChange={handleVoiceChange}
+                                >
+                                    {voices.map((v, index) => (
+                                        <option key={index} value={v.name}>{v.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                    )}
+                    {error && <div className="text-red-500 mb-6">{error}</div>}
+                    <footer className="text-center mt-6">
+                        <p className="text-sm text-gray-500">&copy; 2024 @0bito404.dev. All rights reserved.</p>
+                    </footer>
+                </div>
             );
         }
 
-        ReactDOM.render(<App />, document.getElementById('root'));
+        document.addEventListener('DOMContentLoaded', () => {
+            ReactDOM.render(<App />, document.getElementById('root'));
+        });
     </script>
 </body>
 </html>
