@@ -1,0 +1,422 @@
+<!-- 
+    NOTICE: This code and content is protected under copyright laws.
+    Unauthorized copying, distribution, or use of this code is prohibited.
+    
+    If you wish to use this code or content, please obtain permission from the author.
+    
+    Violations of these terms may result in legal actions, including but not limited to:
+    - Reporting to GitHub or other hosting platforms for DMCA takedown
+    - Legal action for copyright infringement
+    
+    For more details, please refer to the LICENSE section.
+-->
+
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fawzan Khan - Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, rgb(44, 62, 80), rgb(52, 152, 219));
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: linear-gradient(135deg, rgb(52, 152, 219), rgb(44, 62, 80));
+            color: rgb(255, 255, 255);
+            padding: 30px 0;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+        .contact-info a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            position: relative;
+            padding-left: 15px;
+        }
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 20px;
+            background-color: #3498db;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        p, li {
+            font-size: 1rem;
+        }
+        .skills, .projects, .experience {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background-color: #3498db;
+            border-radius: 5px;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #3498db;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -34px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #3498db;
+        }
+        .timeline-date {
+            font-style: italic;
+            color: #777;
+        }
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #3498db;
+            color: #ffffff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .container > section {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .container > section:nth-child(1) { animation-delay: 0.1s; }
+        .container > section:nth-child(2) { animation-delay: 0.2s; }
+        .container > section:nth-child(3) { animation-delay: 0.3s; }
+        .container > section:nth-child(4) { animation-delay: 0.4s; }
+        .container > section:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fawzan Khan</h1>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Moninpura, Pune, 411009</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:jarvis404.dev@gmail.com">jarvis404.dev@gmail.com</a></p>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/0bito404.dev" target="_blank">@0bito404.dev</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/Fawzan-404" target="_blank">Fawzan-404</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fawzan-khan-58ba53326/" target="_blank">Fawzan Khan</a></p>
+            </div>
+        </header>
+
+        <section class="objective">
+            <h2>Professional Summary</h2>
+            <p>Innovative B.Sc. Computer Science student with expertise in full-stack development, cybersecurity, and AI solutions. Experienced in developing secure applications, implementing data protection measures, and automation solutions. Demonstrated ability in building scalable web applications and AI-driven systems with a strong focus on security and performance optimization.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skill-items">
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Programming Languages (JavaScript, Python, C)</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Web Development (HTML, CSS, React.js, Node.js, Firebase)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>AI &amp; Voice Interaction (Python, NLP, Machine Learning)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Cybersecurity (Secure Coding, Network Security)</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Data Science &amp; Analytics (SQL, Data Visualization)</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Development Tools (Git, VS Code, Jupyter Notebook)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education &amp; Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>B.Sc. Computer Science</h3>
+                        <p class="timeline-date">Poona College, Pune (2023-2026)</p>
+                        <p>Relevant Coursework: Data Structures, Algorithms, Web Development, Cybersecurity, Database Management</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Certifications</h3>
+                        <ul>
+                            <li>Python for Data Science (Coursera)</li>
+                            <li>Web Security Fundamentals (freeCodeCamp)</li>
+                            <li>JavaScript Algorithms and Data Structures</li>
+                            <li>IoT Course (Achieved #1 Rank!) by IAO-USA Accredited Courses</li>
+                            <li>Aavishkar 2024 Zonal level research project competition (Achieved #20 Rank! All over Maharashtra in Pure Science)</li>
+                            <li>Aavishkar 2024 Zonal level research project competition (Achieved #20 Rank! All over Maharashtra in Humanities language and arts)</li> 
+                            <li>Technovate for India Achieved TOP #5 Rank!</li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Jarvis - AI Assistant</h3>
+                    <p>A sophisticated personal assistant powered by Python, featuring voice interaction, task management, and automation capabilities. Includes gesture control, GUI interface, and integration with various APIs for enhanced functionality.</p>
+                    <p><strong>Technologies:</strong> Python, pyttsx3, SpeechRecognition, PyQt5, OpenCV, MediaPipe</p>
+                    <a href="#" class="project-link">View Images</a>
+                    <a href="https://github.com/Fawzan-404/Jarvis" class="project-link" target="_blank">GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Track404 - Location Tracking System</h3>
+                    <p>A real-time location tracking system with modern UI design. Features include live location monitoring, route history, and geofencing capabilities.</p>
+                    <p><strong>Technologies:</strong> JavaScript, HTML5, CSS3, Google Maps API, Node.js</p>
+                    <a href="#" class="project-link">View Images</a>
+                    <a href="https://github.com/Fawzan-404/Track404" class="project-link" target="_blank">GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Obito Fighting Game</h3>
+                    <p>A 2D fighting game featuring Obito character with smooth animations, combat mechanics, and special moves. Includes health system, combo mechanics, and dynamic backgrounds.</p>
+                    <p><strong>Technologies:</strong> JavaScript, HTML5 Canvas, CSS3</p>
+                    <a href="#" class="project-link">View Image</a>
+                    <a href="https://github.com/Fawzan-404/ObitoGame" class="project-link" target="_blank">GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Schedule Tracker</h3>
+                    <p>A neon-themed task management application with built-in alarm system. Features include task categorization, priority setting, and deadline notifications.</p>
+                    <p><strong>Technologies:</strong> JavaScript, HTML5, CSS3, Local Storage API</p>
+                    <a href="#" class="project-link">View Image</a>
+                    <a href="https://github.com/Fawzan-404/ScheduleTracker" class="project-link" target="_blank">GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>C-JS.Rev</h3>
+                    <p>An interactive learning platform for C and JavaScript programming. Features include code snippets, practice exercises, and comprehensive documentation for beginners.</p>
+                    <p><strong>Technologies:</strong> C, JavaScript, HTML5, CSS3</p>
+                    <a href="https://github.com/Fawzan-404/C-JS.Rev" class="project-link" target="_blank">GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Digital Content Portfolio - Philiya</h3>
+                    <p>A responsive portfolio website showcasing video content and tutorials. Features include video galleries, blog sections, and social media integration.</p>
+                    <p><strong>Technologies:</strong> React.js, CSS3, YouTube API, Instagram API</p>
+                    <a href="#" class="project-link">View Images</a>
+                    <a href="https://philiya.com" class="project-link" target="_blank">Live Site</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>AI &amp; Web Developer (Freelance)</h3>
+                        <p class="timeline-date">2023 - Present</p>
+                        <p>Worked on projects involving web development, voice automation, and AI assistants, delivering solutions that improved task automation and user interaction.</p>
+                        <p>• Developed and edited technical tutorial videos for social media platforms
+                        <br>• Created engaging content for Instagram and YouTube, focusing on technology and programming
+                        <br>• Utilized Adobe Premiere Pro and Canva for video editing and graphic design
+                        <br>• Implemented SEO best practices for improved content visibility</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="languages">
+            <h2>Languages</h2>
+            <p><strong>English:</strong> Fluent</p>
+            <p><strong>Roman Urdu:</strong> Fluent</p>
+        </section>
+
+        <section class="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Developing AI-driven applications</li>
+                <li>Game development (2D fighting games)</li>
+                <li>Going to the gym</li>
+            </ul>
+        </section>
+
+        <a href="#" class="download-btn" onclick="downloadHTML()">Download Resume</a>
+
+        <footer class="footer">
+            <p>© 2025 Fawzan Khan</p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadHTML() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'FawzanKhan_Resume.html';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    </script>
+
+
+</body></html>
