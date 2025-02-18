@@ -428,45 +428,46 @@
         </footer>
     </div>
 
-    <script>
-         function toggleImages(link) {
-                let imagesDiv = link.nextElementSibling;
-                if (imagesDiv.style.display === "none") {
-                    imagesDiv.style.display = "block";
-                } else {
-                    imagesDiv.style.display = "none";
-                }
-            }
-        function downloadHTML() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'FawzanKhan_Resume.html';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
+   <script>
+    function toggleImages(link) {
+        let imagesDiv = link.nextElementSibling;
+        if (imagesDiv.style.display === "none" || imagesDiv.style.display === "") {
+            imagesDiv.style.display = "block";
+        } else {
+            imagesDiv.style.display = "none";
         }
+    }
 
-        // Single consolidated event listener for all project cards
-        document.addEventListener('DOMContentLoaded', function() {
-            const projectCards = document.querySelectorAll('.project-card');
+    function downloadHTML() {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'FawzanKhan_Resume.html';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach(card => {
+            const viewImageLink = card.querySelector('.project-link:not([target="_blank"])');
+            const images = card.querySelector('.project-images');
             
-            projectCards.forEach(card => {
-                const viewImageLink = card.querySelector('.project-link:not([target="_blank"])');
-                const images = card.querySelector('.project-images');
-                
-                if (viewImageLink && images) {
-                    viewImageLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        images.style.display = images.style.display === 'none' ? 'block' : 'none';
-                    });
-                }
-            });
+            if (viewImageLink && images) {
+                viewImageLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    images.style.display = images.style.display === "none" || images.style.display === "" ? "block" : "none";
+                });
+            }
         });
-    </script>
+    });
+</script>
+
 
 
 </body></html>
