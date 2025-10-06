@@ -108,8 +108,29 @@
         }
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 20px;
+        }
+        .project-card p {
+            margin: 10px 0;
+            word-break: break-word;
+        }
+        .project-card ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .project-card li {
+            margin-bottom: 5px;
+        }
+        .project-images {
+            margin-top: 10px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .project-images img {
+            max-width: 100%;
+            height: auto;
         }
         .project-card {
             background-color: #fff;
@@ -117,11 +138,11 @@
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            line-height: 1.5;
-            overflow-wrap: break-word;
             word-wrap: break-word;
-            hyphens: auto;
-}
+            overflow-wrap: break-word;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .project-card:hover {
             transform: translateY(-5px);
@@ -325,193 +346,193 @@ Skilled in artificial intelligence, automation, large language models, and human
     <h2>Projects</h2>
     <div class="project-grid">
 
-        <!-- Jarvis 404 – Core AI Automation System -->
-        <div class="project-card">
-            <h3>Jarvis 404 – Core AI Automation System</h3>
-            <p>The first generation of the Jarvis AI Evolution — a locally running assistant capable of voice and gesture interactions, task automation, and intelligent decision‑making.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Voice and gesture control integration</li>
-                <li>Real‑time task automation and system management</li>
-                <li>Smart reminders and notifications</li>
-                <li>Conversational feedback engine</li>
-            </ul>
-            <p><strong>Language:</strong> Python</p>
-            <p><strong>Status:</strong> Private Repository</p>
-            <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
-            <div class="project-images" style="display:none;">
-                <a href="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" target="_blank">
-                    <img src="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-                <a href="https://i.ibb.co/f5GrHns/jarvis-GUO.png" target="_blank">
-                    <img src="https://i.ibb.co/f5GrHns/jarvis-GUO.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-                <a href="https://i.ibb.co/hjWcYX1/jarvismainimg.png" target="_blank">
-                    <img src="https://i.ibb.co/hjWcYX1/jarvismainimg.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-            </div>
+      <!-- Jarvis 404 – Core AI Automation System -->
+      <div class="project-card">
+        <h3>Jarvis 404 – Core AI Automation System</h3>
+        <p>The first generation of the Jarvis AI Evolution — a locally running assistant capable of voice and gesture interactions, task automation, and intelligent decision‑making.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Voice and gesture control integration</li>
+            <li>Real‑time task automation and system management</li>
+            <li>Smart reminders and notifications</li>
+            <li>Conversational feedback engine</li>
+        </ul>
+        <p><strong>Language:</strong> Python</p>
+        <p><strong>Status:</strong> Private Repository</p>
+        <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
+        <div class="project-images" style="display:none;">
+            <a href="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" target="_blank">
+                <img src="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+            <a href="https://i.ibb.co/f5GrHns/jarvis-GUO.png" target="_blank">
+                <img src="https://i.ibb.co/f5GrHns/jarvis-GUO.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+            <a href="https://i.ibb.co/hjWcYX1/jarvismainimg.png" target="_blank">
+                <img src="https://i.ibb.co/hjWcYX1/jarvismainimg.png" style="width:180px;height:auto;margin:4px;">
+            </a>
         </div>
-
-        <!-- Jarvis 4H – Emotional Intelligence Module -->
-        <div class="project-card">
-            <h3>Jarvis 4H – Emotion and Sentiment Module</h3>
-            <p>An advanced extension of Jarvis 404 that adds emotion recognition and contextual understanding, giving conversations human‑like sensitivity and tone awareness.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Emotion and sentiment analysis</li>
-                <li>Adaptive conversation style based on mood</li>
-                <li>Dynamic context handling and recall</li>
-                <li>Personalized responsive interaction</li>
-            </ul>
-            <p><strong>Language:</strong> Python</p>
-            <p><strong>Status:</strong> Private Repository</p>
-            <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
-            <div class="project-images" style="display:none;">
-                <a href="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" target="_blank">
-                    <img src="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-            </div>
-        </div>
-
-        <!-- Relationship Assistant -->
-        <div class="project-card">
-            <h3>Relationship Assistant – AI Memory Companion</h3>
-            <p>An intelligent AI companion that remembers preferences, important dates, and shared moments to help users maintain stronger personal connections.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Personal memory and recall system</li>
-                <li>Emotionally supportive dialog patterns</li>
-                <li>Relationship and event reminders</li>
-                <li>Adaptive response logic</li>
-            </ul>
-            <p><strong>Language:</strong> Python</p>
-            <p><strong>Status:</strong> Private Repository</p>
-        </div>
-
-        <!-- Karen – Personal AI Companion -->
-        <div class="project-card">
-            <h3>Karen – Personal AI Companion</h3>
-            <p>A friendly assistant designed for daily interaction and motivation. Karen offers a light‑hearted personality with helpful, empathetic conversation for everyday use.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Interactive personality and friendly tone</li>
-                <li>Daily motivation and updates</li>
-                <li>Always‑on multi‑device support</li>
-                <li>Fast, lightweight design</li>
-            </ul>
-            <p><strong>Language:</strong> Python</p>
-            <p><strong>Status:</strong> Live (Private Deployment)</p>
-        </div>
-
-        <!-- Innovate 4H – Mental Health AI -->
-        <div class="project-card">
-            <h3>Innovate 4H – Mental Health Support AI</h3>
-            <p>An empathetic digital companion for mental well‑being that encourages conversation, motivation, and self‑awareness through supportive communication.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Emotionally supportive responses</li>
-                <li>Motivational daily check‑ins</li>
-                <li>Private communication environment</li>
-                <li>Lightweight and accessible structure</li>
-            </ul>
-            <p><strong>Language:</strong> Python</p>
-            <p><strong>Status:</strong> Active (Private)</p>
-        </div>
-
-        <!-- Cryptocurrency Trading Bot -->
-        <div class="project-card">
-            <h3>Cryptocurrency Trading Bot</h3>
-            <p>An automated trading bot that analyzes market data and executes trades based on custom strategies for optimized performance and risk management.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Market analysis and strategy execution</li>
-                <li>Dynamic buy/sell logic with logging</li>
-                <li>Performance tracking dashboard</li>
-                <li>Risk control algorithms</li>
-            </ul>
-            <p><strong>Language:</strong> Python</p>
-            <p><strong>Status:</strong> Private Repository</p>
-            <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
-            <div class="project-images" style="display:none;">
-                <a href="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" target="_blank">
-                    <img src="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" style="width:180px;height:auto;margin:4px;">
-                </a>
-            </div>
-        </div>
-
-        <!-- Track 404 -->
-        <div class="project-card">
-            <h3>Track 404 – Real‑Time Tracking System</h3>
-            <p>A real‑time monitoring solution featuring a custom dashboard that visualizes object movement and provides live alerts for security and analytics.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Live tracking and visualization</li>
-                <li>Custom data dashboard</li>
-                <li>Alert and notification control</li>
-                <li>Performance log system</li>
-            </ul>
-            <p><strong>Language:</strong> Python & JavaScript</p>
-            <p><strong>Status:</strong> Private Repository</p>
-            <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
-            <div class="project-images" style="display:none;">
-                <a href="https://i.ibb.co/CtJkqhF/Track404-img.png" target="_blank">
-                    <img src="https://i.ibb.co/CtJkqhF/Track404-img.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-                <a href="https://i.ibb.co/TKGVgq6/Track404-img2.png" target="_blank">
-                    <img src="https://i.ibb.co/TKGVgq6/Track404-img2.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-            </div>
-        </div>
-
-        <!-- Connect Peace -->
-        <div class="project-card">
-            <h3>Connect Peace – Privacy‑Focused Social Platform</h3>
-            <p>A minimalistic, privacy‑centered social platform that allows users to connect and communicate securely without storing personal data or tracking usage.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Anonymous accounts and conversations</li>
-                <li>No data retention or analytics</li>
-                <li>Clean and intuitive design</li>
-                <li>Freedom of expression with privacy</li>
-            </ul>
-            <p><strong>Language:</strong> JavaScript & Python</p>
-           <p><strong>Status:</strong> Private Repository  (Relaunching soon — because the future deserves an upgrade)</p>
-            <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
-            <div class="project-images" style="display:none;">
-                <a href="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" target="_blank">
-                    <img src="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-                <a href="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" target="_blank">
-                    <img src="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-                <a href="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" target="_blank">
-                    <img src="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" style="width:180px;height:auto;margin:4px;">
-                </a>
-            </div>
-        </div>
-
-        <!-- Schedule Tracker -->
-        <div class="project-card">
-            <h3>Schedule Tracker</h3>
-            <p>A simple and efficient task management web app featuring reminders, priority tagging, and a dark interface designed for daily productivity.</p>
-            <p><strong>Key Features:</strong></p>
-            <ul>
-                <li>Task creation and prioritization</li>
-                <li>Real‑time alerts and notifications</li>
-                <li>Clean neon‑styled dark UI</li>
-                <li>Responsive design for all devices</li>
-            </ul>
-            <p><strong>Language:</strong> HTML / CSS / JavaScript</p>
-            <p><strong>Status:</strong> Completed</p>
-            <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
-            <div class="project-images" style="display:none;">
-                <a href="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" target="_blank">
-                    <img src="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" style="width:180px;height:auto;margin:4px;">
-                </a>
-            </div>
-        </div>
-
     </div>
+
+    <!-- Jarvis 4H – Emotional Intelligence Module -->
+    <div class="project-card">
+        <h3>Jarvis 4H – Emotion and Sentiment Module</h3>
+        <p>An advanced extension of Jarvis 404 that adds emotion recognition and contextual understanding, giving conversations human‑like sensitivity and tone awareness.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Emotion and sentiment analysis</li>
+            <li>Adaptive conversation style based on mood</li>
+            <li>Dynamic context handling and recall</li>
+            <li>Personalized responsive interaction</li>
+        </ul>
+        <p><strong>Language:</strong> Python</p>
+        <p><strong>Status:</strong> Private Repository</p>
+        <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
+        <div class="project-images" style="display:none;">
+            <a href="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" target="_blank">
+                <img src="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Relationship Assistant -->
+    <div class="project-card">
+        <h3>Relationship Assistant – AI Memory Companion</h3>
+        <p>An intelligent AI companion that remembers preferences, important dates, and shared moments to help users maintain stronger personal connections.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Personal memory and recall system</li>
+            <li>Emotionally supportive dialog patterns</li>
+            <li>Relationship and event reminders</li>
+            <li>Adaptive response logic</li>
+        </ul>
+        <p><strong>Language:</strong> Python</p>
+        <p><strong>Status:</strong> Private Repository</p>
+    </div>
+
+    <!-- Karen – Personal AI Companion -->
+    <div class="project-card">
+        <h3>Karen – Personal AI Companion</h3>
+        <p>A friendly assistant designed for daily interaction and motivation. Karen offers a light‑hearted personality with helpful, empathetic conversation for everyday use.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Interactive personality and friendly tone</li>
+            <li>Daily motivation and updates</li>
+            <li>Always‑on multi‑device support</li>
+            <li>Fast, lightweight design</li>
+        </ul>
+        <p><strong>Language:</strong> Python</p>
+        <p><strong>Status:</strong> Live (Private Deployment)</p>
+    </div>
+
+    <!-- Innovate 4H – Mental Health AI -->
+    <div class="project-card">
+        <h3>Innovate 4H – Mental Health Support AI</h3>
+        <p>An empathetic digital companion for mental well‑being that encourages conversation, motivation, and self‑awareness through supportive communication.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Emotionally supportive responses</li>
+            <li>Motivational daily check‑ins</li>
+            <li>Private communication environment</li>
+            <li>Lightweight and accessible structure</li>
+        </ul>
+        <p><strong>Language:</strong> Python</p>
+        <p><strong>Status:</strong> Active (Private)</p>
+    </div>
+
+    <!-- Cryptocurrency Trading Bot -->
+    <div class="project-card">
+        <h3>Cryptocurrency Trading Bot</h3>
+        <p>An automated trading bot that analyzes market data and executes trades based on custom strategies for optimized performance and risk management.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Market analysis and strategy execution</li>
+            <li>Dynamic buy/sell logic with logging</li>
+            <li>Performance tracking dashboard</li>
+            <li>Risk control algorithms</li>
+        </ul>
+        <p><strong>Language:</strong> Python</p>
+        <p><strong>Status:</strong> Private Repository</p>
+        <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
+        <div class="project-images" style="display:none;">
+            <a href="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" target="_blank">
+                <img src="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" style="width:180px;height:auto;margin:4px;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Track 404 -->
+    <div class="project-card">
+        <h3>Track 404 – Real‑Time Tracking System</h3>
+        <p>A real‑time monitoring solution featuring a custom dashboard that visualizes object movement and provides live alerts for security and analytics.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Live tracking and visualization</li>
+            <li>Custom data dashboard</li>
+            <li>Alert and notification control</li>
+            <li>Performance log system</li>
+        </ul>
+        <p><strong>Language:</strong> Python & JavaScript</p>
+        <p><strong>Status:</strong> Private Repository</p>
+        <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
+        <div class="project-images" style="display:none;">
+            <a href="https://i.ibb.co/CtJkqhF/Track404-img.png" target="_blank">
+                <img src="https://i.ibb.co/CtJkqhF/Track404-img.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+            <a href="https://i.ibb.co/TKGVgq6/Track404-img2.png" target="_blank">
+                <img src="https://i.ibb.co/TKGVgq6/Track404-img2.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Connect Peace -->
+    <div class="project-card">
+        <h3>Connect Peace – Privacy‑Focused Social Platform</h3>
+        <p>A minimalistic, privacy‑centered social platform that allows users to connect and communicate securely without storing personal data or tracking usage.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Anonymous accounts and conversations</li>
+            <li>No data retention or analytics</li>
+            <li>Clean and intuitive design</li>
+            <li>Freedom of expression with privacy</li>
+        </ul>
+        <p><strong>Language:</strong> JavaScript & Python</p>
+       <p><strong>Status:</strong> Private Repository  (Relaunching soon — because the future deserves an upgrade)</p>
+        <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
+        <div class="project-images" style="display:none;">
+            <a href="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" target="_blank">
+                <img src="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+            <a href="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" target="_blank">
+                <img src="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+            <a href="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" target="_blank">
+                <img src="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" style="width:180px;height:auto;margin:4px;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Schedule Tracker -->
+    <div class="project-card">
+        <h3>Schedule Tracker</h3>
+        <p>A simple and efficient task management web app featuring reminders, priority tagging, and a dark interface designed for daily productivity.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Task creation and prioritization</li>
+            <li>Real‑time alerts and notifications</li>
+            <li>Clean neon‑styled dark UI</li>
+            <li>Responsive design for all devices</li>
+        </ul>
+        <p><strong>Language:</strong> HTML / CSS / JavaScript</p>
+        <p><strong>Status:</strong> Completed</p>
+        <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
+        <div class="project-images" style="display:none;">
+            <a href="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" target="_blank">
+                <img src="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" style="width:180px;height:auto;margin:4px;">
+            </a>
+        </div>
+    </div>
+
+</div>
 </section>
 
         <section class="languages">
@@ -581,7 +602,7 @@ Skilled in artificial intelligence, automation, large language models, and human
     canvas.height = innerHeight;
 
     let particles = [];
-    const num = 160;
+    const num = 100;
 
     function initParticles() {
         particles = [];
