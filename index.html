@@ -452,15 +452,25 @@
             transform: translate(-50%, -50%);
             display: grid;
             place-items: center;
-            width: 98px;
-            height: 98px;
-            border-radius: 28px;
-            background: radial-gradient(circle, #1da0ff, #0a315a);
-            color: #ffffff;
-            font-family: "Outfit", "Geist", sans-serif;
-            font-size: 2.25rem;
-            font-weight: 800;
-            box-shadow: 0 0 58px rgba(37, 208, 216, 0.32);
+            width: 112px;
+            height: 112px;
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at 50% 45%, rgba(37, 208, 216, 0.22), rgba(4, 12, 26, 0.72) 64%, rgba(4, 12, 26, 0.92));
+            box-shadow:
+                inset 0 1px 0 rgba(142, 232, 255, 0.22),
+                0 0 58px rgba(37, 208, 216, 0.34);
+        }
+
+        .orbit-logo {
+            display: block;
+            width: 92%;
+            height: 92%;
+            object-fit: contain;
+            border-radius: 22px;
+            filter:
+                drop-shadow(0 0 10px rgba(83, 243, 255, 0.42))
+                drop-shadow(0 0 24px rgba(37, 208, 216, 0.24));
         }
 
         .orbit-card span {
@@ -1054,10 +1064,9 @@
         }
 
         .orbit-core {
-            width: 78px;
-            height: 78px;
+            width: 88px;
+            height: 88px;
             border-radius: 22px;
-            font-size: 1.9rem;
         }
 
         .orbit-card span {
@@ -1268,10 +1277,9 @@
             }
 
             .orbit-core {
-                width: 68px;
-                height: 68px;
+                width: 78px;
+                height: 78px;
                 border-radius: 19px;
-                font-size: 1.55rem;
             }
 
             .capability-rail {
@@ -1979,6 +1987,17 @@
                 margin-bottom: 22px;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2026,7 +2045,9 @@
                         <p class="success">Ready: AI app deployed</p>
                     </div>
                     <div class="orbit-card" aria-hidden="true">
-                        <div class="orbit-core">AI</div>
+                        <div class="orbit-core">
+                            <img class="orbit-logo" src="assets/j404-logo.png" alt="J404 logo">
+                        </div>
                         <span>Agents</span>
                         <span>RAG</span>
                         <span>APIs</span>
@@ -2318,139 +2339,167 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
-        document.querySelectorAll(".image-toggle").forEach((button) => {
-            button.addEventListener("click", () => {
+        (() => {
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            document.querySelectorAll(".project-images img").forEach((image) => {
+                image.loading = "lazy";
+                image.decoding = "async";
+            });
+
+            document.querySelectorAll(".image-toggle").forEach((button, index) => {
                 const gallery = button.nextElementSibling;
                 if (!gallery) return;
-                gallery.classList.toggle("is-open");
-                button.textContent = gallery.classList.contains("is-open") ? "Hide Images" : button.dataset.label || button.textContent;
-            });
-            button.dataset.label = button.textContent;
-        });
 
-        document.getElementById("download-resume").addEventListener("click", (event) => {
-            event.preventDefault();
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: "text/html" });
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement("a");
-            link.href = url;
-            link.download = "FawzanKhan_Resume.html";
-            document.body.appendChild(link);
-            link.click();
-            window.URL.revokeObjectURL(url);
-            link.remove();
-        });
+                const originalLabel = button.textContent.trim();
+                const galleryId = gallery.id || `project-gallery-${index + 1}`;
 
-        function initMotion() {
-            if (!window.gsap || !window.ScrollTrigger) return;
+                gallery.id = galleryId;
+                gallery.hidden = true;
+                button.dataset.label = originalLabel;
+                button.setAttribute("aria-controls", galleryId);
+                button.setAttribute("aria-expanded", "false");
 
-            gsap.registerPlugin(ScrollTrigger);
+                button.addEventListener("click", () => {
+                    const isOpen = !gallery.classList.contains("is-open");
 
-            gsap.from(".site-nav", {
-                y: -18,
-                opacity: 0,
-                duration: 0.7,
-                ease: "power3.out"
+                    gallery.classList.toggle("is-open", isOpen);
+                    gallery.hidden = !isOpen;
+                    button.textContent = isOpen ? "Hide Images" : originalLabel;
+                    button.setAttribute("aria-expanded", String(isOpen));
+                });
             });
 
-            gsap.from(".hero h1, .role, .capability, .contact-strip, .hero-actions", {
-                y: 28,
-                opacity: 0,
-                duration: 0.9,
-                stagger: 0.08,
-                ease: "power3.out"
+            const resumeButton = document.getElementById("download-resume");
+            resumeButton?.addEventListener("click", (event) => {
+                event.preventDefault();
+
+                const resumeMarkup = document.documentElement.outerHTML;
+                const resumeBlob = new Blob([resumeMarkup], { type: "text/html;charset=utf-8" });
+                const objectUrl = window.URL.createObjectURL(resumeBlob);
+                const link = document.createElement("a");
+
+                try {
+                    link.href = objectUrl;
+                    link.download = "FawzanKhan_Resume.html";
+                    document.body.appendChild(link);
+                    link.click();
+                } finally {
+                    link.remove();
+                    window.URL.revokeObjectURL(objectUrl);
+                }
             });
 
-            gsap.from(".system-card > *", {
-                y: 36,
-                scale: 0.94,
-                opacity: 0,
-                duration: 0.9,
-                stagger: 0.12,
-                delay: 0.2,
-                ease: "power3.out"
-            });
+            function initMotion() {
+                if (prefersReducedMotion || !window.gsap || !window.ScrollTrigger) return;
 
-            gsap.from(".floating-window, .room-plane, .depth-ray", {
-                y: 22,
-                opacity: 0,
-                scale: 0.94,
-                duration: 1.1,
-                stagger: 0.08,
-                ease: "power3.out"
-            });
+                gsap.registerPlugin(ScrollTrigger);
 
-            gsap.to(".floating-window.one", {
-                y: -10,
-                x: 6,
-                repeat: -1,
-                yoyo: true,
-                duration: 4.8,
-                ease: "sine.inOut"
-            });
+                gsap.from(".site-nav", {
+                    y: -18,
+                    opacity: 0,
+                    duration: 0.7,
+                    ease: "power3.out"
+                });
 
-            gsap.to(".floating-window.two", {
-                y: 12,
-                x: -5,
-                repeat: -1,
-                yoyo: true,
-                duration: 5.6,
-                ease: "sine.inOut"
-            });
-
-            gsap.utils.toArray(".section").forEach((section) => {
-                gsap.from(section.querySelectorAll("h2, .section-head p"), {
+                gsap.from(".hero h1, .role, .capability, .contact-strip, .hero-actions", {
                     y: 28,
                     opacity: 0,
-                    duration: 0.8,
+                    duration: 0.9,
+                    stagger: 0.08,
+                    ease: "power3.out"
+                });
+
+                gsap.from(".system-card > *", {
+                    y: 36,
+                    scale: 0.94,
+                    opacity: 0,
+                    duration: 0.9,
+                    stagger: 0.12,
+                    delay: 0.2,
+                    ease: "power3.out"
+                });
+
+                gsap.from(".floating-window, .room-plane, .depth-ray", {
+                    y: 22,
+                    opacity: 0,
+                    scale: 0.94,
+                    duration: 1.1,
+                    stagger: 0.08,
+                    ease: "power3.out"
+                });
+
+                gsap.to(".floating-window.one", {
+                    y: -10,
+                    x: 6,
+                    repeat: -1,
+                    yoyo: true,
+                    duration: 4.8,
+                    ease: "sine.inOut"
+                });
+
+                gsap.to(".floating-window.two", {
+                    y: 12,
+                    x: -5,
+                    repeat: -1,
+                    yoyo: true,
+                    duration: 5.6,
+                    ease: "sine.inOut"
+                });
+
+                gsap.utils.toArray(".section").forEach((section) => {
+                    gsap.from(section.querySelectorAll("h2, .section-head p"), {
+                        y: 28,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.08,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 82%",
+                            toggleActions: "play none none reverse"
+                        }
+                    });
+                });
+
+                gsap.utils.toArray(".card, .panel, .timeline-content").forEach((card) => {
+                    gsap.fromTo(card,
+                        { y: 38, scale: 0.96, opacity: 0 },
+                        {
+                            y: 0,
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.8,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: card,
+                                start: "top 90%",
+                                toggleActions: "play none none reverse"
+                            }
+                        }
+                    );
+                });
+
+                gsap.from(".training-intro", {
+                    y: 18,
+                    opacity: 0,
+                    duration: 0.7,
                     stagger: 0.08,
                     ease: "power3.out",
                     scrollTrigger: {
-                        trigger: section,
+                        trigger: "#ai-training",
                         start: "top 82%",
                         toggleActions: "play none none reverse"
                     }
                 });
-            });
+            }
 
-            gsap.utils.toArray(".card, .panel, .timeline-content").forEach((card) => {
-                gsap.fromTo(card,
-                    { y: 38, scale: 0.96, opacity: 0 },
-                    {
-                        y: 0,
-                        scale: 1,
-                        opacity: 1,
-                        duration: 0.8,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: card,
-                            start: "top 90%",
-                            toggleActions: "play none none reverse"
-                        }
-                    }
-                );
-            });
-
-            gsap.from(".training-intro", {
-                y: 18,
-                opacity: 0,
-                duration: 0.7,
-                stagger: 0.08,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: "#ai-training",
-                    start: "top 82%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-        }
-
-        if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", initMotion);
-        } else {
-            initMotion();
-        }
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", initMotion, { once: true });
+            } else {
+                initMotion();
+            }
+        })();
     </script>
 </body>
 </html>
