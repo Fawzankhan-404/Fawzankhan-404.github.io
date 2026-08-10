@@ -1,465 +1,2111 @@
-<!-- 
+<!--
     NOTICE: This code and content is protected under copyright laws.
     Unauthorized copying, distribution, or use of this code is prohibited.
-    
     If you wish to use this code or content, please obtain permission from the author.
-    
-    Violations of these terms may result in legal actions, including but not limited to:
-    - Reporting to GitHub or other hosting platforms for DMCA takedown
-    - Legal action for copyright infringement
-    
-    For more details, please refer to the LICENSE section.
 -->
-
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fawzan Khan - AI Developer, Automation Engineer & AI Training Pune</title>
-    <meta name="description" content="Fawzan Khan is an AI Developer and Automation Engineer in Pune building practical AI systems, agents, automation workflows, AI applications, and project-based AI training through Jarvis404 Academy.">
-    <meta name="keywords" content="Fawzan Khan, AI Developer Pune, AI Developer, AI Automation, AI Agents, AI Training, AI Development Training Pune, AI Workshops, Jarvis404 Academy">
+    <meta name="description" content="Fawzan Khan is an AI Developer and Automation Engineer in Pune building practical AI systems, agents, automation workflows, intelligent applications, and project-based AI training through Jarvis404 Academy.">
+    <meta name="keywords" content="Fawzan Khan, AI Developer Pune, AI Developer, AI Development, AI Automation, AI Agents, AI Training, AI Development Training Pune, AI Workshops, Jarvis404 Academy">
     <meta property="og:title" content="Fawzan Khan - AI Developer & Automation Engineer">
     <meta property="og:description" content="Portfolio of Fawzan Khan: practical AI systems, automation workflows, AI agents, intelligent applications, and AI development training.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fawzankhan-404.github.io/">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        :root {
+            --bg: #040914;
+            --bg-2: #081827;
+            --surface: #f6f9fc;
+            --surface-2: #eaf3fb;
+            --ink: #07111f;
+            --muted: #5c6c80;
+            --line: rgba(8, 28, 52, 0.11);
+            --line-light: rgba(255, 255, 255, 0.18);
+            --blue: #168bf2;
+            --cyan: #25d0d8;
+            --green: #66f0b4;
+            --shadow: 0 26px 80px rgba(0, 16, 34, 0.28);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --container: min(1180px, calc(100% - 34px));
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            background: linear-gradient(135deg, #0A0E14, #001F3F);
-            color: #000000;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
             overflow-x: hidden;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 14% 10%, rgba(37, 208, 216, 0.18), transparent 26rem),
+                radial-gradient(circle at 84% 18%, rgba(22, 139, 242, 0.24), transparent 32rem),
+                linear-gradient(145deg, var(--bg), var(--bg-2));
+            font-family: "Geist", Arial, sans-serif;
+            line-height: 1.6;
         }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 44px 44px;
+            opacity: 0.28;
+        }
+
         a {
-            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            color: inherit;
+            text-decoration: none;
+            transition: transform 0.22s ease, color 0.22s ease, background 0.22s ease, border-color 0.22s ease;
         }
-        a:focus-visible {
-            outline: 3px solid #f1c40f;
-            outline-offset: 3px;
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #f6c84f;
+            outline-offset: 4px;
         }
-        .container {
-            max-width: 980px;
-            width: 90%;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        p {
+            color: var(--muted);
+            font-size: 1.03rem;
+            line-height: 1.75;
+            margin: 0;
+            max-width: 72ch;
         }
-        .container, header, section, .project-card, .skill-item, .training-card, .training-panel {
-            box-sizing: border-box;
+
+        ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        li {
+            color: var(--muted);
+            margin: 0.36rem 0;
+        }
+
+        img {
             max-width: 100%;
         }
-        header {
-            background: linear-gradient(135deg, rgb(52, 152, 219), rgb(44, 62, 80));
-            color: rgb(255, 255, 255);
-            padding: 30px 0;
-            border-radius: 10px 10px 0 0;
-            text-align: center;
+
+        .page-shell {
+            width: var(--container);
+            margin: 24px auto;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.42);
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            box-shadow: var(--shadow);
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .hero-role {
-            font-size: 1.1em;
-            margin: 5px auto 8px;
-            max-width: 760px;
-            line-height: 1.45;
-        }
-        .hero-capability {
-            margin: 0 auto 18px;
-            color: #edf6ff;
-            font-size: 0.98rem;
-            line-height: 1.45;
-        }
-        .nav-links {
+
+        .site-nav {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            z-index: 20;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0 8px;
-        }
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            border-radius: 6px;
-            padding: 7px 12px;
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.18);
-            transform: translateY(-1px);
-        }
-        .hero-actions, .section-actions {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 18px;
-        }
-        .btn-primary, .btn-secondary {
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 40px;
-            padding: 9px 16px;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
+            gap: 6px;
+            transform: translateX(-50%);
+            padding: 8px;
+            border: 1px solid var(--line-light);
+            border-radius: 999px;
+            background: rgba(4, 12, 26, 0.7);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.24);
+            scrollbar-width: none;
         }
-        .btn-primary {
-            background: #0d7adf;
-            color: #ffffff;
-            border: 1px solid #0d7adf;
+
+        .site-nav::-webkit-scrollbar {
+            display: none;
         }
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.45);
-        }
-        .btn-primary:hover, .btn-secondary:hover {
-            transform: translateY(-2px);
-        }
-        .contact-info p {
-            margin: 8px 0;
-            font-size: 1.1em;
-        }
-        .contact-info a {
-            color: #ecf0f1;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            position: relative;
-            padding-left: 15px;
-        }
-        h2::before {
-            content: '';
+
+        .site-nav::before {
+            content: "";
             position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 5px;
-            height: 20px;
-            background-color: #3498db;
+            inset: -18px;
+            z-index: -1;
+            border-radius: inherit;
+            background: radial-gradient(circle, rgba(37, 208, 216, 0.12), transparent 70%);
+            filter: blur(10px);
         }
-        .section {
-            margin-bottom: 20px;
-        }
-        p, li {
-            font-size: 1rem;
-            overflow-wrap: break-word;
-        }
-        h1, h2, h3, h4, span, a {
-            overflow-wrap: anywhere;
-        }
-        .skills, .projects, .experience, .training {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .skill-items, .training-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 12px;
-        }
-        .skill-item, .training-card, .training-panel {
-            background: #ffffff;
-            border: 1px solid #dbe7f3;
-            border-radius: 8px;
-            padding: 14px;
-            box-shadow: 0 2px 8px rgba(14, 47, 79, 0.06);
-        }
-        .skill-item strong, .training-card strong {
-            display: block;
-            color: #1f3a57;
-            margin-bottom: 4px;
-        }
-        .training-intro {
-            max-width: 760px;
-            color: #263849;
-        }
-        .training-flow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 8px;
-            margin: 18px 0 8px;
-        }
-        .flow-step {
-            background: linear-gradient(135deg, #0d2b45, #124c7e);
-            color: #ffffff;
-            border-radius: 7px;
-            padding: 10px;
-            text-align: center;
+
+        .site-nav a {
+            padding: 9px 14px;
+            border-radius: 999px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.94rem;
             font-weight: 700;
-            font-size: 0.9rem;
+            white-space: nowrap;
         }
-        .training-note {
-            color: #435466;
-            margin-top: 8px;
+
+        .site-nav a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-1px);
         }
-        .training-panels {
+
+        .hero {
+            position: relative;
+            isolation: isolate;
+            min-height: 92vh;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-            margin-top: 20px;
+            align-items: end;
+            padding: clamp(110px, 12vw, 150px) clamp(22px, 6vw, 78px) 38px;
+            overflow: hidden;
+            color: #ffffff;
+            background:
+                radial-gradient(circle at 78% 30%, rgba(37, 208, 216, 0.16), transparent 22rem),
+                radial-gradient(circle at 18% 78%, rgba(22, 139, 242, 0.28), transparent 28rem),
+                linear-gradient(135deg, #030814 0%, #071524 48%, #0b2137 100%);
         }
-        .training-panel h3 {
-            margin-top: 0;
-            color: #1f3a57;
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                radial-gradient(circle at 64% 48%, rgba(255, 255, 255, 0.08), transparent 18rem);
+            background-size: 52px 52px, 52px 52px, auto;
+            mask-image: linear-gradient(90deg, transparent, #000 18%, #000 86%, transparent);
         }
-        .training-panel .project-link {
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-        .training .project-link {
-            border: 1px solid #3498db;
-        }
-        .project-grid {
+
+        .hero-inner {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            padding: 20px;
+            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr);
+            gap: clamp(24px, 5vw, 70px);
+            align-items: end;
         }
-        .project-card p {
-            margin: 10px 0;
-            word-break: break-word;
-        }
-        .project-card ul {
-            padding-left: 20px;
-            margin: 10px 0;
-        }
-        .project-card li {
-            margin-bottom: 5px;
-        }
-        .project-images {
-            margin-top: 10px;
-            max-width: 100%;
+
+        .spatial-room {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            perspective: 1200px;
             overflow: hidden;
         }
-        .project-images img {
+
+        .room-plane {
+            position: absolute;
+            left: 50%;
+            bottom: -18%;
+            width: 118%;
+            height: 48%;
+            transform: translateX(-50%) rotateX(68deg);
+            transform-origin: center bottom;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background:
+                linear-gradient(rgba(37, 208, 216, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 208, 216, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 50% 0%, rgba(22, 139, 242, 0.18), transparent 60%);
+            background-size: 62px 62px, 62px 62px, auto;
+            opacity: 0.78;
+            mask-image: linear-gradient(180deg, #000, transparent 82%);
+        }
+
+        .floating-window {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025));
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 28px 90px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            opacity: 0.72;
+        }
+
+        .floating-window.one {
+            top: 19%;
+            right: 15%;
+            width: 118px;
+            height: 76px;
+            transform: translateZ(-80px) rotateY(-24deg) rotateX(8deg);
+        }
+
+        .floating-window.two {
+            left: 9%;
+            bottom: 23%;
+            width: 96px;
+            height: 138px;
+            transform: translateZ(-120px) rotateY(28deg) rotateX(-6deg);
+        }
+
+        .floating-window.three {
+            right: 9%;
+            bottom: 16%;
+            width: 150px;
+            height: 92px;
+            transform: translateZ(-60px) rotateY(-18deg);
+        }
+
+        .depth-ray {
+            position: absolute;
+            left: 50%;
+            top: 16%;
+            width: 1px;
+            height: 70%;
+            background: linear-gradient(transparent, rgba(37, 208, 216, 0.3), transparent);
+            opacity: 0.48;
+            transform: rotate(31deg);
+        }
+
+        .hero-copy {
+            max-width: 860px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            max-width: 900px;
+            font-family: "Outfit", "Geist", sans-serif;
+            font-size: clamp(3.4rem, 8vw, 7rem);
+            line-height: 0.9;
+            letter-spacing: 0;
+            text-wrap: balance;
+        }
+
+        .role {
+            margin-top: 24px;
+            color: #ffffff;
+            font-size: clamp(1.05rem, 2vw, 1.45rem);
+            font-weight: 700;
             max-width: 100%;
-            height: auto;
+            text-wrap: balance;
+            overflow-wrap: anywhere;
         }
-        .project-card {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            height: 100%;
+
+        .capability {
+            margin-top: 8px;
+            color: rgba(235, 246, 255, 0.78);
+            font-size: 1.08rem;
+            max-width: 100%;
+            text-wrap: balance;
+            overflow-wrap: anywhere;
+        }
+
+        .hero-actions,
+        .section-actions,
+        .cta-actions {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
         }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+        .button {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 13px;
+            font-weight: 800;
+            letter-spacing: 0;
         }
-        .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
+
+        .button-primary {
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: linear-gradient(135deg, var(--blue), #18b8ff);
+            box-shadow: 0 18px 46px rgba(22, 139, 242, 0.34);
         }
-        .timeline {
-            position: relative;
-            padding-left: 30px;
+
+        .button-secondary {
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(14px);
         }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #3498db;
+
+        .button-dark {
+            color: #ffffff;
+            background: #07111f;
+            border: 1px solid #07111f;
         }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
+
+        .button-light {
+            color: #07111f;
+            border: 1px solid rgba(7, 17, 31, 0.14);
+            background: rgba(255, 255, 255, 0.7);
         }
-        .timeline-dot {
-            position: absolute;
-            left: -34px;
-            top: 0;
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .contact-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(16px);
+            font-size: 0.94rem;
+            font-weight: 700;
+        }
+
+        .system-card {
+            align-self: stretch;
+            display: grid;
+            gap: 16px;
+            min-width: 0;
+        }
+
+        .terminal,
+        .orbit-card {
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 24px;
+            background: rgba(2, 10, 22, 0.68);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 24px 70px rgba(0, 0, 0, 0.26);
+            backdrop-filter: blur(18px);
+        }
+
+        .terminal {
+            min-width: 0;
+            overflow: hidden;
+            padding: 18px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.9rem;
+        }
+
+        .terminal-bar {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 16px;
+        }
+
+        .terminal-bar span {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: #3498db;
+            background: var(--green);
         }
-        .timeline-date {
-            font-style: italic;
-            color: #777;
+
+        .terminal-bar span:nth-child(2) {
+            background: #60a5fa;
         }
-        .download-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-            background-color: #3498db;
+
+        .terminal-bar span:nth-child(3) {
+            background: #f6c84f;
+        }
+
+        .terminal p {
+            margin: 8px 0;
+            color: rgba(218, 246, 255, 0.62);
+            overflow-wrap: anywhere;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .terminal .success {
+            color: #8ef3c3;
+        }
+
+        .orbit-card {
+            position: relative;
+            min-height: 236px;
+            overflow: hidden;
+        }
+
+        .orbit-card::before {
+            content: "";
+            position: absolute;
+            inset: 34px;
+            border: 1px dashed rgba(255, 255, 255, 0.22);
+            border-radius: 50%;
+        }
+
+        .orbit-core {
+            position: absolute;
+            inset: 50% auto auto 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            place-items: center;
+            width: 98px;
+            height: 98px;
+            border-radius: 28px;
+            background: radial-gradient(circle, #1da0ff, #0a315a);
             color: #ffffff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2em;
-            margin: 20px 0;
+            font-family: "Outfit", "Geist", sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            box-shadow: 0 0 58px rgba(37, 208, 216, 0.32);
         }
-        .download-btn:hover {
-            background-color: #2980b9;
+
+        .orbit-card span {
+            position: absolute;
+            padding: 8px 10px;
+            border-radius: 999px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.12);
+            font-size: 0.8rem;
+            font-weight: 800;
         }
-        .footer {
+
+        .orbit-card span:nth-of-type(1) { top: 28px; left: 26px; }
+        .orbit-card span:nth-of-type(2) { right: 24px; top: 92px; }
+        .orbit-card span:nth-of-type(3) { bottom: 26px; left: 48px; }
+        .orbit-card span:nth-of-type(4) { bottom: 42px; right: 34px; }
+
+        .capability-rail {
+            overflow: hidden;
+            margin-top: 46px;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+        }
+
+        .rail-track {
+            display: flex;
+            gap: 36px;
+            width: max-content;
+            padding: 14px 0;
+            animation: rail 26s linear infinite;
+        }
+
+        .rail-track span {
+            color: rgba(255, 255, 255, 0.74);
+            font-size: 0.86rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        @keyframes rail {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .section {
+            padding: clamp(58px, 8vw, 104px) clamp(22px, 6vw, 78px);
+            border-top: 1px solid var(--line);
+            background:
+                radial-gradient(circle at 12% 8%, rgba(37, 208, 216, 0.09), transparent 18rem),
+                radial-gradient(circle at 88% 30%, rgba(22, 139, 242, 0.08), transparent 22rem),
+                linear-gradient(135deg, #f8fbff 0%, #edf6ff 48%, #f6f2ff 100%);
+        }
+
+        .section.alt {
+            background:
+                radial-gradient(circle at 12% 14%, rgba(120, 226, 211, 0.1), transparent 18rem),
+                radial-gradient(circle at 92% 10%, rgba(22, 139, 242, 0.12), transparent 24rem),
+                linear-gradient(135deg, #eef8ff 0%, #eaf3fb 48%, #f3f8ff 100%);
+        }
+
+        .section.dark {
+            color: #ffffff;
+            background:
+                radial-gradient(circle at 80% 18%, rgba(37, 208, 216, 0.13), transparent 24rem),
+                linear-gradient(135deg, #07111f, #0b2035);
+        }
+
+        .section.dark p,
+        .section.dark li {
+            color: rgba(235, 246, 255, 0.72);
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(260px, 0.65fr);
+            gap: 26px;
+            align-items: end;
+            margin-bottom: 34px;
+        }
+
+        h2 {
+            margin: 0;
+            color: #09213b;
+            font-family: "Outfit", "Geist", sans-serif;
+            font-size: clamp(2.15rem, 4.6vw, 4.3rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+            text-wrap: balance;
+        }
+
+        .dark h2 {
+            color: #ffffff;
+        }
+
+        h3 {
+            margin: 0;
+            color: #09213b;
+            font-family: "Outfit", "Geist", sans-serif;
+            line-height: 1.12;
+            letter-spacing: 0;
+        }
+
+        .dark h3 {
+            color: #ffffff;
+        }
+
+        .summary-copy {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(240px, 0.42fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .summary-copy p {
+            font-size: clamp(1.08rem, 1.7vw, 1.24rem);
+        }
+
+        .proof-panel {
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .proof-panel strong {
+            display: block;
+            color: #09213b;
+            font-family: "Outfit", "Geist", sans-serif;
+            font-size: 1.35rem;
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-auto-flow: dense;
+            gap: 16px;
+        }
+
+        .skill-grid {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .training-grid {
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        }
+
+        .project-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card {
+            position: relative;
+            min-width: 0;
+            overflow: hidden;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.76);
+            box-shadow: 0 20px 54px rgba(10, 37, 64, 0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 20% 0%, rgba(22, 139, 242, 0.1), transparent 12rem);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .card::after,
+        .panel::after,
+        .proof-panel::after,
+        .timeline-content::after {
+            content: "";
+            position: absolute;
+            inset: auto 12% -18px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(10, 37, 64, 0.16);
+            filter: blur(16px);
+            opacity: 0.66;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(22, 139, 242, 0.28);
+            box-shadow: 0 30px 78px rgba(10, 37, 64, 0.16);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card strong {
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin-bottom: 8px;
+            color: #09213b;
+            font-family: "Outfit", "Geist", sans-serif;
+            font-size: 1.13rem;
+            line-height: 1.18;
+        }
+
+        .card span,
+        .card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .training-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+            grid-auto-flow: dense;
+            gap: 10px;
+            margin-top: 26px;
+        }
+
+        .flow-step {
+            padding: 12px 10px;
+            border-radius: 16px;
+            color: #ffffff;
             text-align: center;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #888;
+            font-size: 0.88rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #07111f, var(--blue));
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
         }
-        @media (max-width: 768px) {
-            .container {
-                width: calc(100% - 20px);
-                padding: 18px;
-                box-sizing: border-box;
+
+        .training-panels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .panel {
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 22px 58px rgba(10, 37, 64, 0.08);
+        }
+
+        .panel h3 {
+            margin-bottom: 12px;
+            font-size: 1.45rem;
+        }
+
+        .panel p + p {
+            margin-top: 10px;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 16px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 14px 1fr;
+            gap: 16px;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            margin-top: 8px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 0 7px rgba(37, 208, 216, 0.13);
+        }
+
+        .timeline-content {
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .timeline-date {
+            margin: 7px 0 10px;
+            color: #486174;
+            font-weight: 700;
+        }
+
+        .llm-grid {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .llm-card {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .llm-card strong {
+            color: #ffffff;
+        }
+
+        .llm-card a {
+            display: inline-flex;
+            margin-top: 12px;
+            color: #8ee8ff;
+            font-weight: 800;
+        }
+
+        .project-card h3 {
+            font-size: 1.32rem;
+            margin-bottom: 12px;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .project-meta span {
+            padding: 7px 10px;
+            border-radius: 999px;
+            color: #15334f;
+            background: rgba(22, 139, 242, 0.1);
+            font-size: 0.84rem;
+            font-weight: 800;
+        }
+
+        .image-toggle {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            margin-top: 16px;
+            padding: 10px 13px;
+            border: 1px solid rgba(22, 139, 242, 0.18);
+            border-radius: 12px;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--blue), #18b8ff);
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .project-images {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .project-images.is-open {
+            display: grid;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 16px;
+            filter: contrast(1.06) saturate(0.96);
+            transition: transform 0.7s ease, filter 0.7s ease;
+        }
+
+        .project-images img:hover {
+            transform: scale(1.04);
+            filter: contrast(1.12) saturate(1.05);
+        }
+
+        .compact-grid {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .cta {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 0.45fr);
+            gap: 28px;
+            align-items: center;
+            padding: clamp(58px, 8vw, 100px) clamp(22px, 6vw, 78px);
+            color: #ffffff;
+            background:
+                radial-gradient(circle at 82% 16%, rgba(37, 208, 216, 0.17), transparent 22rem),
+                linear-gradient(135deg, #07111f, #0b243a);
+        }
+
+        .cta h2 {
+            color: #ffffff;
+        }
+
+        .cta p {
+            color: rgba(235, 246, 255, 0.74);
+        }
+
+        .footer {
+            padding: 24px clamp(22px, 6vw, 78px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.66);
+            background: #050c17;
+            text-align: center;
+        }
+
+        .reveal-word {
+            opacity: 0.64;
+            transition: opacity 0.2s linear;
+        }
+
+        @media (max-width: 900px) {
+            .page-shell {
+                width: min(100% - 16px, 1180px);
+                margin: 8px auto;
+                border-radius: 22px;
             }
-            header {
-                overflow: hidden;
+
+            .site-nav {
+                width: calc(100% - 30px);
+                overflow-x: auto;
+                justify-content: center;
+                border-radius: 18px;
             }
-            .contact-info a {
-                word-break: break-word;
+
+            .hero {
+                min-height: auto;
+                padding-top: 100px;
             }
-            header h1 {
-                font-size: 2em;
+
+            .hero-inner,
+            .section-head,
+            .summary-copy,
+            .cta {
+                grid-template-columns: 1fr;
             }
-            .hero-role, .hero-capability {
-                padding: 0 8px;
-                overflow-wrap: anywhere;
-                text-wrap: balance;
+
+            .system-card {
+                max-width: 560px;
             }
-            .project-grid {
-                padding: 0;
-                gap: 18px;
-            }
-            .hero-actions, .section-actions {
-                align-items: stretch;
-                flex-direction: column;
-            }
-            .btn-primary, .btn-secondary, .training-panel .project-link {
+        }
+
+        @media (max-width: 560px) {
+            .page-shell {
                 width: 100%;
-                box-sizing: border-box;
+                margin: 0;
+                border-radius: 0;
+                border-left: 0;
+                border-right: 0;
+            }
+
+            .site-nav a {
+                padding: 8px 10px;
+                font-size: 0.88rem;
+            }
+
+            .hero {
+                padding: 96px 20px 32px;
                 text-align: center;
             }
+
+            .hero-copy {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.5rem, 17vw, 4.8rem);
+            }
+
+            .role {
+                font-size: 1.04rem;
+                line-height: 1.45;
+            }
+
+            .capability {
+                font-size: 0.98rem;
+            }
+
+            .hero-actions,
+            .contact-strip,
+            .section-actions,
+            .cta-actions {
+                justify-content: stretch;
+            }
+
+            .button,
+            .contact-chip,
+            .image-toggle {
+                width: 100%;
+            }
+
+            .system-card {
+                width: 100%;
+            }
+
+            .orbit-card {
+                min-height: 190px;
+            }
+
+            .terminal {
+                text-align: left;
+                font-size: 0.82rem;
+            }
+
+            .section,
+            .cta {
+                padding: 56px 18px;
+            }
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        /* Compact spatial pass: shorter viewports, denser cards, cleaner mobile rhythm. */
+        .page-shell {
+            margin: 14px auto;
         }
-        .container > section {
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
+
+        .hero {
+            min-height: min(780px, 82vh);
+            align-items: center;
+            padding: clamp(92px, 9vw, 122px) clamp(22px, 5vw, 64px) 24px;
         }
-        .container > section:nth-child(1) { animation-delay: 0.1s; }
-        .container > section:nth-child(2) { animation-delay: 0.2s; }
-        .container > section:nth-child(3) { animation-delay: 0.3s; }
-        .container > section:nth-child(4) { animation-delay: 0.4s; }
-        .container > section:nth-child(5) { animation-delay: 0.5s; }
+
+        .hero-inner {
+            grid-template-columns: minmax(0, 1fr) minmax(250px, 0.44fr);
+            gap: clamp(20px, 4vw, 48px);
+            align-items: center;
+        }
+
+        .hero h1 {
+            max-width: 780px;
+            font-size: clamp(3rem, 6.6vw, 5.8rem);
+        }
+
+        .role {
+            margin-top: 18px;
+            font-size: clamp(1rem, 1.7vw, 1.24rem);
+        }
+
+        .capability {
+            font-size: 1rem;
+        }
+
+        .contact-strip {
+            margin-top: 22px;
+            gap: 8px;
+        }
+
+        .contact-chip {
+            min-height: 36px;
+            padding: 7px 10px;
+            border-radius: 11px;
+            font-size: 0.88rem;
+        }
+
+        .hero-actions,
+        .section-actions,
+        .cta-actions {
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .button {
+            min-height: 42px;
+            padding: 10px 14px;
+            border-radius: 11px;
+            font-size: 0.94rem;
+        }
+
+        .system-card {
+            gap: 12px;
+        }
+
+        .terminal {
+            padding: 15px;
+            border-radius: 20px;
+        }
+
+        .terminal p {
+            margin: 6px 0;
+            font-size: 0.8rem;
+            line-height: 1.55;
+        }
+
+        .orbit-card {
+            min-height: 190px;
+            border-radius: 20px;
+        }
+
+        .orbit-card::before {
+            inset: 28px;
+        }
+
+        .orbit-core {
+            width: 78px;
+            height: 78px;
+            border-radius: 22px;
+            font-size: 1.9rem;
+        }
+
+        .orbit-card span {
+            padding: 6px 8px;
+            font-size: 0.72rem;
+        }
+
+        .capability-rail {
+            margin-top: 26px;
+        }
+
+        .rail-track {
+            padding: 10px 0;
+            gap: 28px;
+        }
+
+        .rail-track span {
+            font-size: 0.78rem;
+        }
+
+        .section {
+            padding: clamp(42px, 5.5vw, 68px) clamp(20px, 5vw, 62px);
+        }
+
+        .section-head {
+            grid-template-columns: minmax(0, 0.9fr) minmax(220px, 0.58fr);
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3.6vw, 3.25rem);
+        }
+
+        p,
+        li {
+            font-size: 0.97rem;
+            line-height: 1.62;
+        }
+
+        .summary-copy {
+            gap: 20px;
+        }
+
+        .summary-copy p {
+            font-size: clamp(1rem, 1.35vw, 1.1rem);
+        }
+
+        .grid {
+            gap: 12px;
+        }
+
+        .skill-grid,
+        .training-grid {
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        }
+
+        .project-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .card,
+        .panel,
+        .proof-panel,
+        .timeline-content {
+            padding: 17px;
+            border-radius: 18px;
+        }
+
+        .card strong {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .training-flow {
+            gap: 8px;
+            margin-top: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(102px, 1fr));
+        }
+
+        .flow-step {
+            padding: 9px 8px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+        }
+
+        .training-panels {
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .panel h3 {
+            font-size: 1.22rem;
+        }
+
+        .timeline {
+            gap: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 1.12rem;
+            margin-bottom: 8px;
+        }
+
+        .project-meta {
+            margin-top: 10px;
+            gap: 6px;
+        }
+
+        .project-meta span {
+            padding: 5px 8px;
+            font-size: 0.75rem;
+        }
+
+        .image-toggle {
+            min-height: 38px;
+            margin-top: 12px;
+            padding: 8px 11px;
+            border-radius: 10px;
+            font-size: 0.86rem;
+        }
+
+        .cta {
+            grid-template-columns: minmax(0, 1fr) minmax(250px, 0.44fr);
+            gap: 20px;
+            padding: clamp(42px, 5.5vw, 68px) clamp(20px, 5vw, 62px);
+        }
+
+        @media (max-width: 900px) {
+            .page-shell {
+                margin: 6px auto;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 86px 20px 24px;
+            }
+
+            .hero-inner {
+                gap: 18px;
+            }
+
+            .system-card {
+                max-width: 460px;
+                justify-self: center;
+            }
+
+            .section-head,
+            .summary-copy,
+            .cta {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .site-nav {
+                top: 10px;
+                width: calc(100% - 20px);
+                padding: 6px;
+            }
+
+            .site-nav a {
+                padding: 7px 9px;
+            }
+
+            .hero {
+                padding: 78px 16px 22px;
+            }
+
+            .hero-copy {
+                max-width: 360px;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 16vw, 4.2rem);
+                line-height: 0.92;
+            }
+
+            .role {
+                margin-top: 14px;
+                font-size: 0.96rem;
+            }
+
+            .capability {
+                font-size: 0.9rem;
+            }
+
+            .contact-strip {
+                margin-top: 18px;
+            }
+
+            .contact-chip {
+                min-height: 38px;
+                justify-content: center;
+                font-size: 0.9rem;
+            }
+
+            .button {
+                min-height: 44px;
+            }
+
+            .terminal {
+                padding: 13px;
+            }
+
+            .orbit-card {
+                min-height: 168px;
+            }
+
+            .orbit-core {
+                width: 68px;
+                height: 68px;
+                border-radius: 19px;
+                font-size: 1.55rem;
+            }
+
+            .capability-rail {
+                margin-top: 20px;
+            }
+
+            .section,
+            .cta {
+                padding: 38px 16px;
+            }
+
+            .section-head {
+                margin-bottom: 18px;
+            }
+
+            h2 {
+                font-size: clamp(1.72rem, 10vw, 2.55rem);
+            }
+
+            .skill-grid,
+            .training-grid,
+            .project-grid,
+            .compact-grid,
+            .llm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .hero-copy,
+            .system-card,
+            .terminal,
+            .orbit-card {
+                width: min(100%, 280px);
+                max-width: 280px;
+            }
+
+            .system-card {
+                justify-self: center;
+                margin-top: 4px;
+            }
+
+            .terminal {
+                min-height: auto;
+            }
+
+            .orbit-card {
+                min-height: 156px;
+            }
+
+            .orbit-card::before {
+                inset: 24px 42px;
+            }
+
+            .orbit-card span:nth-of-type(1) { top: 22px; left: 22px; }
+            .orbit-card span:nth-of-type(2) { right: 22px; top: 64px; }
+            .orbit-card span:nth-of-type(3) { bottom: 22px; left: 42px; }
+            .orbit-card span:nth-of-type(4) { bottom: 24px; right: 34px; }
+
+            .capability-rail {
+                display: none;
+            }
+        }
+
+        /* Spatial finish: depth, layered glass, and compact 3D feel. */
+        .page-shell {
+            position: relative;
+            perspective: 1400px;
+            transform-style: preserve-3d;
+        }
+
+        .page-shell::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 16% 14%, rgba(37, 208, 216, 0.08), transparent 18rem),
+                radial-gradient(circle at 84% 36%, rgba(22, 139, 242, 0.08), transparent 22rem);
+        }
+
+        .hero,
+        .section,
+        .cta,
+        .footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            transform-style: preserve-3d;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            right: clamp(18px, 8vw, 120px);
+            top: clamp(82px, 12vw, 150px);
+            width: min(34vw, 420px);
+            aspect-ratio: 1;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32% 68% 45% 55%;
+            background:
+                radial-gradient(circle at 42% 34%, rgba(37, 208, 216, 0.22), transparent 8rem),
+                linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+            filter: blur(0.2px);
+            opacity: 0.86;
+            transform: translateZ(-60px) rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .hero-copy {
+            transform: translateZ(42px);
+        }
+
+        .system-card {
+            transform: translateZ(78px) rotateY(-7deg) rotateX(2deg);
+            transform-origin: center;
+            filter: drop-shadow(0 34px 60px rgba(0, 0, 0, 0.26));
+        }
+
+        .terminal,
+        .orbit-card {
+            background:
+                linear-gradient(135deg, rgba(5, 16, 34, 0.92), rgba(8, 27, 47, 0.78));
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.12),
+                0 18px 54px rgba(0,0,0,0.28);
+        }
+
+        .orbit-card {
+            transform: translateX(18px) translateY(-4px);
+        }
+
+        .terminal {
+            transform: translateX(-10px);
+        }
+
+        .section {
+            transform-style: preserve-3d;
+        }
+
+        .section-head {
+            transform: translateZ(26px);
+        }
+
+        .card,
+        .panel,
+        .proof-panel,
+        .timeline-content {
+            transform-style: preserve-3d;
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.62));
+            box-shadow:
+                0 18px 42px rgba(10, 37, 64, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .card:hover,
+        .panel:hover,
+        .proof-panel:hover,
+        .timeline-content:hover {
+            transform: translateY(-5px) translateZ(18px) rotateX(1deg);
+        }
+
+        .skill-grid .card:nth-child(2n),
+        .training-grid .card:nth-child(3n),
+        .project-grid .card:nth-child(2n) {
+            transform: translateY(8px);
+        }
+
+        .skill-grid .card:nth-child(2n):hover,
+        .training-grid .card:nth-child(3n):hover,
+        .project-grid .card:nth-child(2n):hover {
+            transform: translateY(2px) translateZ(18px) rotateX(1deg);
+        }
+
+        .section.alt {
+            background:
+                radial-gradient(circle at 88% 6%, rgba(22, 139, 242, 0.1), transparent 16rem),
+                radial-gradient(circle at 10% 90%, rgba(37, 208, 216, 0.09), transparent 18rem),
+                linear-gradient(135deg, #eaf6ff 0%, #f6fbff 54%, #eef3ff 100%);
+        }
+
+        .section.dark {
+            background:
+                radial-gradient(circle at 72% 22%, rgba(37, 208, 216, 0.16), transparent 18rem),
+                linear-gradient(135deg, #06101e, #0a2137 58%, #06101e);
+        }
+
+        .cta {
+            overflow: hidden;
+        }
+
+        .section:not(.dark) {
+            background:
+                radial-gradient(circle at 12% 18%, rgba(37, 208, 216, 0.08), transparent 20rem),
+                radial-gradient(circle at 84% 22%, rgba(22, 139, 242, 0.1), transparent 24rem),
+                linear-gradient(135deg, #f8fbff 0%, #edf6ff 46%, #f5f1ff 100%);
+        }
+
+        .section:not(.dark)::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(rgba(9, 33, 59, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(9, 33, 59, 0.025) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+        }
+
+        .cta::after {
+            content: "";
+            position: absolute;
+            right: -90px;
+            bottom: -110px;
+            width: 300px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(37,208,216,0.2), transparent 70%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .system-card {
+                transform: translateZ(0);
+                filter: drop-shadow(0 22px 44px rgba(0, 0, 0, 0.22));
+            }
+
+            .terminal,
+            .orbit-card {
+                transform: none;
+            }
+
+            .skill-grid .card:nth-child(2n),
+            .training-grid .card:nth-child(3n),
+            .project-grid .card:nth-child(2n) {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero::before {
+                width: 260px;
+                top: 88px;
+                right: -80px;
+                opacity: 0.46;
+            }
+
+            .hero-copy {
+                transform: none;
+            }
+        }
+
+        /* Readability finish: keep spatial depth while protecting text clarity. */
+        p,
+        li {
+            color: #40566f;
+            font-size: clamp(1rem, 1.1vw, 1.08rem);
+            line-height: 1.72;
+        }
+
+        .section-head p,
+        .summary-copy p,
+        .proof-panel p,
+        .panel p,
+        .card p,
+        .card span,
+        .timeline-content p,
+        .timeline-content li {
+            color: #354c64;
+        }
+
+        .section.dark p,
+        .section.dark li,
+        .llm-card p,
+        .cta p {
+            color: rgba(242, 248, 255, 0.82);
+        }
+
+        .role {
+            color: #ffffff;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
+        }
+
+        .capability {
+            color: rgba(245, 250, 255, 0.9);
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.32);
+        }
+
+        .site-nav a,
+        .contact-chip,
+        .button,
+        .image-toggle {
+            font-size: max(0.95rem, 15px);
+        }
+
+        .contact-chip {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.13);
+        }
+
+        .terminal p {
+            color: rgba(230, 247, 255, 0.82);
+            font-size: max(0.88rem, 14px);
+            line-height: 1.65;
+        }
+
+        .terminal .success {
+            color: #93ffd0;
+            font-weight: 700;
+        }
+
+        .rail-track span,
+        .orbit-card span,
+        .project-meta span,
+        .flow-step {
+            font-size: max(0.82rem, 13px);
+        }
+
+        .card strong,
+        .panel h3,
+        .proof-panel strong,
+        .timeline-content h3,
+        .project-card h3 {
+            color: #071a30;
+        }
+
+        .llm-card strong,
+        .dark h2,
+        .dark h3 {
+            color: #ffffff;
+        }
+
+        .reveal-word {
+            opacity: 1;
+        }
+
+        @media (max-width: 700px) {
+            p,
+            li {
+                font-size: 1rem;
+                line-height: 1.68;
+            }
+
+            .hero h1 {
+                text-shadow: 0 6px 32px rgba(0, 0, 0, 0.42);
+            }
+
+            .role {
+                font-size: 1rem;
+            }
+
+            .capability {
+                font-size: 0.96rem;
+            }
+
+            .terminal p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .section:not(.dark) .card,
+        .section:not(.dark) .panel,
+        .section:not(.dark) .proof-panel,
+        .section:not(.dark) .timeline-content {
+            border-color: rgba(7, 17, 31, 0.16);
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(239, 246, 253, 0.94));
+            box-shadow:
+                0 18px 46px rgba(10, 37, 64, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        }
+
+        .section:not(.dark) .card strong,
+        .section:not(.dark) .panel h3,
+        .section:not(.dark) .proof-panel strong,
+        .section:not(.dark) .timeline-content h3,
+        .section:not(.dark) .project-card h3 {
+            color: #06111f;
+        }
+
+        .section:not(.dark) .card span,
+        .section:not(.dark) .card p,
+        .section:not(.dark) .panel p,
+        .section:not(.dark) .proof-panel p,
+        .section:not(.dark) .timeline-content p,
+        .section:not(.dark) .timeline-content li {
+            color: #1d344b;
+        }
+
+        .section:not(.dark) .project-meta span {
+            color: #06243a;
+            background: rgba(22, 139, 242, 0.14);
+            border: 1px solid rgba(22, 139, 242, 0.16);
+        }
+
+        .section:not(.dark) .button-light {
+            color: #06111f;
+            background: rgba(255, 255, 255, 0.96);
+            border-color: rgba(7, 17, 31, 0.18);
+        }
+
+        /* Strong 3D card pass: visible lift, bevels, and spatial staggering. */
+        .grid {
+            perspective: 1200px;
+            transform-style: preserve-3d;
+            overflow: visible;
+        }
+
+        .section:not(.dark) .card,
+        .section:not(.dark) .panel,
+        .section:not(.dark) .proof-panel,
+        .section:not(.dark) .timeline-content {
+            overflow: visible;
+            position: relative;
+            transform: translateZ(0);
+            border: 1px solid rgba(7, 17, 31, 0.18);
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.99) 0%, rgba(241, 248, 255, 0.96) 58%, rgba(226, 239, 251, 0.94) 100%);
+            box-shadow:
+                0 2px 0 rgba(255, 255, 255, 0.9) inset,
+                0 -1px 0 rgba(7, 17, 31, 0.08) inset,
+                0 18px 28px rgba(10, 37, 64, 0.11),
+                0 44px 82px rgba(10, 37, 64, 0.14);
+        }
+
+        .section:not(.dark) .card::before,
+        .section:not(.dark) .panel::before,
+        .section:not(.dark) .proof-panel::before,
+        .section:not(.dark) .timeline-content::before {
+            content: "";
+            position: absolute;
+            inset: 1px;
+            z-index: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.86), transparent 36%),
+                radial-gradient(circle at 16% 12%, rgba(255,255,255,0.84), transparent 8rem);
+            opacity: 0.9;
+        }
+
+        .section:not(.dark) .card::after,
+        .section:not(.dark) .panel::after,
+        .section:not(.dark) .proof-panel::after,
+        .section:not(.dark) .timeline-content::after {
+            content: "";
+            position: absolute;
+            left: 9%;
+            right: 9%;
+            bottom: -18px;
+            height: 30px;
+            z-index: -1;
+            border-radius: 50%;
+            background: rgba(10, 37, 64, 0.22);
+            filter: blur(18px);
+            transform: rotateX(62deg) translateZ(-24px);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .section:not(.dark) .card > *,
+        .section:not(.dark) .panel > *,
+        .section:not(.dark) .proof-panel > *,
+        .section:not(.dark) .timeline-content > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-grid .card:nth-child(3n + 1),
+        .training-grid .card:nth-child(4n + 1),
+        .project-grid .card:nth-child(3n + 1) {
+            transform: translateY(-3px) translateZ(6px);
+        }
+
+        .skill-grid .card:nth-child(3n + 2),
+        .training-grid .card:nth-child(4n + 2),
+        .project-grid .card:nth-child(3n + 2) {
+            transform: translateY(4px) translateZ(8px);
+        }
+
+        .skill-grid .card:nth-child(3n),
+        .training-grid .card:nth-child(4n),
+        .project-grid .card:nth-child(3n) {
+            transform: translateY(1px) translateZ(4px);
+        }
+
+        .section:not(.dark) .card:hover,
+        .section:not(.dark) .panel:hover,
+        .section:not(.dark) .proof-panel:hover,
+        .section:not(.dark) .timeline-content:hover,
+        .skill-grid .card:nth-child(3n + 1):hover,
+        .skill-grid .card:nth-child(3n + 2):hover,
+        .skill-grid .card:nth-child(3n):hover,
+        .training-grid .card:nth-child(4n + 1):hover,
+        .training-grid .card:nth-child(4n + 2):hover,
+        .training-grid .card:nth-child(4n):hover,
+        .project-grid .card:nth-child(3n + 1):hover,
+        .project-grid .card:nth-child(3n + 2):hover,
+        .project-grid .card:nth-child(3n):hover {
+            transform: translateY(-8px) translateZ(18px);
+            border-color: rgba(22, 139, 242, 0.32);
+            box-shadow:
+                0 2px 0 rgba(255, 255, 255, 0.92) inset,
+                0 28px 44px rgba(10, 37, 64, 0.16),
+                0 62px 110px rgba(10, 37, 64, 0.22);
+        }
+
+        .section.dark .llm-card {
+            overflow: visible;
+            transform: translateZ(0) rotateX(1deg);
+            box-shadow:
+                0 2px 0 rgba(255,255,255,0.75) inset,
+                0 18px 30px rgba(0, 0, 0, 0.2),
+                0 44px 90px rgba(0, 0, 0, 0.28);
+        }
+
+        .section.dark .llm-card::after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: -18px;
+            height: 30px;
+            z-index: -1;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.34);
+            filter: blur(18px);
+            transform: rotateX(62deg);
+        }
+
+        .section.dark .llm-card:hover {
+            transform: translateY(-10px) translateZ(34px) rotateX(3deg);
+        }
+
+        @media (max-width: 900px) {
+            .section:not(.dark) .card,
+            .section:not(.dark) .panel,
+            .section:not(.dark) .proof-panel,
+            .section:not(.dark) .timeline-content,
+            .skill-grid .card:nth-child(n),
+            .training-grid .card:nth-child(n),
+            .project-grid .card:nth-child(n),
+            .section.dark .llm-card {
+                transform: none;
+            }
+
+            .section:not(.dark) .card:hover,
+            .section:not(.dark) .panel:hover,
+            .section:not(.dark) .proof-panel:hover,
+            .section:not(.dark) .timeline-content:hover,
+            .section.dark .llm-card:hover {
+                transform: translateY(-6px);
+            }
+        }
+
+        .section.dark .llm-card {
+            border-color: rgba(142, 232, 255, 0.22);
+            background:
+                linear-gradient(145deg, rgba(247, 251, 255, 0.92), rgba(214, 224, 232, 0.88));
+            box-shadow:
+                0 22px 58px rgba(0, 0, 0, 0.28),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .section.dark .llm-card strong {
+            color: #07111f;
+            text-shadow: none;
+        }
+
+        .section.dark .llm-card p {
+            color: #20354a;
+        }
+
+        .section.dark .llm-card a {
+            color: #06344f;
+            display: inline-flex;
+            align-items: center;
+            min-height: 36px;
+            margin-top: 14px;
+            padding: 8px 11px;
+            border-radius: 10px;
+            background: rgba(142, 232, 255, 0.82);
+            font-weight: 800;
+        }
+
+        .section.dark .llm-card a:hover {
+            transform: translateY(-2px);
+            background: #b7f4ff;
+        }
+
+        #llm-family {
+            overflow: visible;
+            padding-top: clamp(48px, 5.8vw, 78px);
+            padding-bottom: clamp(54px, 6.2vw, 84px);
+        }
+
+        #llm-family .section-head {
+            align-items: start;
+            margin-bottom: clamp(18px, 2.4vw, 28px);
+        }
+
+        #llm-family .section-head p {
+            max-width: 46ch;
+            color: rgba(235, 246, 255, 0.82);
+            font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+            line-height: 1.55;
+        }
+
+        #llm-family .llm-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(14px, 2vw, 20px);
+            align-items: stretch;
+            padding-top: 4px;
+            overflow: visible;
+        }
+
+        #llm-family .llm-card {
+            display: flex;
+            min-height: 166px;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 22px;
+            overflow: hidden;
+            transform: translateZ(0);
+            border-radius: 20px;
+        }
+
+        #llm-family .llm-card::after {
+            display: none;
+        }
+
+        #llm-family .llm-card strong {
+            overflow-wrap: anywhere;
+            font-size: 0.98rem;
+            line-height: 1.2;
+        }
+
+        #llm-family .llm-card p {
+            margin-top: 8px;
+            color: #20354a;
+            font-size: 0.96rem;
+            line-height: 1.52;
+        }
+
+        #llm-family .llm-card a {
+            width: fit-content;
+            margin-top: 16px;
+        }
+
+        #llm-family .llm-card:hover {
+            transform: translateY(-6px) translateZ(14px);
+        }
+
+        @media (max-width: 900px) {
+            #llm-family .section-head,
+            #llm-family .llm-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #llm-family .llm-card {
+                min-height: auto;
+            }
+        }
+
+        #details .section-head {
+            align-items: start;
+            margin-bottom: clamp(28px, 3.2vw, 42px);
+        }
+
+        #details .section-head p {
+            max-width: 44ch;
+            line-height: 1.58;
+        }
+
+        #details .compact-grid {
+            position: relative;
+            z-index: 1;
+            gap: clamp(16px, 2vw, 22px);
+        }
+
+        #details .card {
+            min-height: 134px;
+        }
+
+        #ai-training .training-grid {
+            margin-top: clamp(22px, 2.8vw, 34px);
+        }
+
+        #projects .project-grid {
+            margin-top: clamp(18px, 2.4vw, 28px);
+        }
+
+        @media (max-width: 900px) {
+            #details .section-head {
+                margin-bottom: 22px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Fawzan Khan</h1>
-            <p class="hero-role">AI Developer | Automation Engineer | AI Product Builder</p>
-            <p class="hero-capability">Building real AI systems | Teaching practical AI development</p>
-            <div class="contact-info" id="contact">
-                <p><i class="fas fa-map-marker-alt"></i> Pune</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:jarvis404.dev@gmail.com">jarvis404.dev@gmail.com</a></p>
-                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/fawzan._x1" target="_blank">Fawzan</a></p>
-                <p><i class="fab fa-github"></i> <a href="https://github.com/Fawzankhan-404" target="_blank">Fawzankhan-404</a></p>
-                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fawzan-khan-58357a386/" target="_blank">Fawzan Khan</a></p>
+    <nav class="site-nav" aria-label="Portfolio navigation">
+        <a href="#projects">Projects</a>
+        <a href="#ai-training">AI Training</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="page-shell">
+        <header class="hero" id="top">
+            <div class="spatial-room" aria-hidden="true">
+                <div class="room-plane"></div>
+                <div class="floating-window one"></div>
+                <div class="floating-window two"></div>
+                <div class="floating-window three"></div>
+                <div class="depth-ray"></div>
             </div>
-            <nav class="nav-links" aria-label="Portfolio navigation">
-                <a href="#projects">Projects</a>
-                <a href="#ai-training">AI Training</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div class="hero-actions">
-                <a class="btn-primary" href="#projects">View Projects</a>
-                <a class="btn-secondary" href="#ai-training">Explore AI Training</a>
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <h1>Fawzan Khan</h1>
+                    <p class="role">AI Developer | Automation Engineer | AI Product Builder</p>
+                    <p class="capability">Building real AI systems | Teaching practical AI development</p>
+
+                    <div class="contact-strip" id="contact">
+                        <span class="contact-chip"><i class="fas fa-map-marker-alt"></i> Pune</span>
+                        <a class="contact-chip" href="mailto:jarvis404.dev@gmail.com"><i class="fas fa-envelope"></i> jarvis404.dev@gmail.com</a>
+                        <a class="contact-chip" href="https://www.instagram.com/fawzan._x1" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Fawzan</a>
+                        <a class="contact-chip" href="https://github.com/Fawzankhan-404" target="_blank" rel="noopener"><i class="fab fa-github"></i> Fawzankhan-404</a>
+                        <a class="contact-chip" href="https://www.linkedin.com/in/fawzan-khan-58357a386/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> Fawzan Khan</a>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#projects">View Projects</a>
+                        <a class="button button-secondary" href="#ai-training">Explore AI Training</a>
+                    </div>
+                </div>
+
+                <div class="system-card" aria-label="AI systems showcase">
+                    <div class="terminal">
+                        <div class="terminal-bar"><span></span><span></span><span></span></div>
+                        <p>$ build-ai-app --demo</p>
+                        <p>Loading Python workflows...</p>
+                        <p>Connecting LLM tools...</p>
+                        <p class="success">Ready: AI app deployed</p>
+                    </div>
+                    <div class="orbit-card" aria-hidden="true">
+                        <div class="orbit-core">AI</div>
+                        <span>Agents</span>
+                        <span>RAG</span>
+                        <span>APIs</span>
+                        <span>Deploy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="capability-rail" aria-label="Core capabilities">
+                <div class="rail-track">
+                    <span>Python for AI</span>
+                    <span>AI Agents</span>
+                    <span>Automation Workflows</span>
+                    <span>RAG Systems</span>
+                    <span>Full-Stack AI Apps</span>
+                    <span>Workshops for Students</span>
+                    <span>Python for AI</span>
+                    <span>AI Agents</span>
+                    <span>Automation Workflows</span>
+                    <span>RAG Systems</span>
+                    <span>Full-Stack AI Apps</span>
+                    <span>Workshops for Students</span>
+                </div>
             </div>
         </header>
 
-        <section class="objective">
-            <h2>Professional Summary</h2>
-            <p>B.Sc. Computer Science student and AI systems developer focused on practical AI applications, automation workflows, local assistants, and human-AI interaction. I build systems around Python, JavaScript, large language models, voice interfaces, task automation, and product-focused AI workflows.</p>
-            <p>My work includes the Jarvis404 AI ecosystem, local assistant experiments, automation tools, and intelligent applications. I also teach practical AI development in a project-based format for students, colleges, institutes, and beginner developers.</p>
-        </section>
-
-        <section class="skills">
-            <h2>Technical Skills</h2>
-            <div class="skill-items">
-                <div class="skill-item">
-                    <strong>Programming</strong>
-                    <span>Python, JavaScript, C</span>
+        <section class="section" id="summary">
+            <div class="section-head">
+                <h2>Professional Summary</h2>
+                <p>Developer-first portfolio with practical AI training and workshop delivery.</p>
+            </div>
+            <div class="summary-copy">
+                <div>
+                    <p>B.Sc. Computer Science student and AI systems developer focused on practical AI applications, automation workflows, local assistants, and human-AI interaction. I build systems around Python, JavaScript, large language models, voice interfaces, task automation, and product-focused AI workflows.</p>
+                    <p>My work includes the Jarvis404 AI ecosystem, local assistant experiments, automation tools, and intelligent applications. I also teach practical AI development through project-based sessions for students, colleges, institutes, and beginner developers.</p>
                 </div>
-                <div class="skill-item">
-                    <strong>Web Development</strong>
-                    <span>HTML, CSS, React.js, Node.js, Firebase</span>
-                </div>
-                <div class="skill-item">
-                    <strong>AI Systems</strong>
-                    <span>LLMs, NLP, voice interaction, machine learning workflows</span>
-                </div>
-                <div class="skill-item">
-                    <strong>Security Basics</strong>
-                    <span>Secure coding, network security fundamentals</span>
-                </div>
-                <div class="skill-item">
-                    <strong>Data &amp; Analytics</strong>
-                    <span>SQL, data visualization, structured analysis</span>
-                </div>
-                <div class="skill-item">
-                    <strong>Development Tools</strong>
-                    <span>Git, VS Code, Jupyter Notebook</span>
-                </div>
+                <aside class="proof-panel">
+                    <strong>Hands-on development first.</strong>
+                    <p>Teaching is backed by real project building, AI experimentation, automation workflows, and working demos.</p>
+                </aside>
             </div>
         </section>
 
-        <section class="training" id="ai-training">
-            <h2>AI DEVELOPMENT &amp; TRAINING</h2>
-            <h3>Building AI. Teaching how it's built.</h3>
+        <section class="section alt" id="skills">
+            <div class="section-head">
+                <h2>Technical Skills</h2>
+                <p>Core tools and domains I use while building AI systems and practical software projects.</p>
+            </div>
+            <div class="grid skill-grid">
+                <div class="card"><strong>Programming</strong><span>Python, JavaScript, C</span></div>
+                <div class="card"><strong>Web Development</strong><span>HTML, CSS, React.js, Node.js, Firebase</span></div>
+                <div class="card"><strong>AI Systems</strong><span>LLMs, NLP, voice interaction, machine learning workflows</span></div>
+                <div class="card"><strong>Security Basics</strong><span>Secure coding and network security fundamentals</span></div>
+                <div class="card"><strong>Data & Analytics</strong><span>SQL, data visualization, structured analysis</span></div>
+                <div class="card"><strong>Development Tools</strong><span>Git, VS Code, Jupyter Notebook</span></div>
+            </div>
+        </section>
+
+        <section class="section" id="ai-training">
+            <div class="section-head">
+                <h2>AI Development & Training</h2>
+                <p>Building AI. Teaching how it is built.</p>
+            </div>
             <p class="training-intro">Alongside building AI applications and automation systems, I provide practical AI development training focused on helping students and beginners understand how modern AI products are actually built.</p>
             <p class="training-intro">The approach is project-driven: learn the concepts, understand the technology, build working applications, and deploy real projects.</p>
 
-            <div class="training-grid" aria-label="AI development training topics">
-                <div class="training-card"><strong>Python for AI Development</strong><span>Core Python patterns used in practical AI apps.</span></div>
-                <div class="training-card"><strong>Generative AI &amp; LLM Fundamentals</strong><span>How modern language models work and where they fit.</span></div>
-                <div class="training-card"><strong>Prompt Engineering</strong><span>Writing prompts that produce reliable, useful outputs.</span></div>
-                <div class="training-card"><strong>Building AI Applications</strong><span>Turning an idea into a working AI product flow.</span></div>
-                <div class="training-card"><strong>AI Agents &amp; Agentic Workflows</strong><span>Designing task-oriented agents and tool workflows.</span></div>
-                <div class="training-card"><strong>APIs &amp; AI Integrations</strong><span>Connecting AI systems with real application backends.</span></div>
-                <div class="training-card"><strong>RAG &amp; Vector Databases</strong><span>Retrieval, embeddings, and document-aware AI apps.</span></div>
-                <div class="training-card"><strong>Automation with AI</strong><span>Using AI to automate practical business and student workflows.</span></div>
-                <div class="training-card"><strong>Local LLMs &amp; AI Models</strong><span>Running and understanding local AI model workflows.</span></div>
-                <div class="training-card"><strong>Full-Stack AI Applications</strong><span>Frontend, backend, model calls, and user-facing flows.</span></div>
-                <div class="training-card"><strong>AI Project Development</strong><span>Planning, building, debugging, and presenting AI projects.</span></div>
-                <div class="training-card"><strong>Deployment &amp; Production Basics</strong><span>Taking a prototype toward a usable deployed application.</span></div>
+            <div class="grid training-grid">
+                <div class="card"><strong>Python for AI Development</strong><span>Core Python patterns used in practical AI apps.</span></div>
+                <div class="card"><strong>Generative AI & LLM Fundamentals</strong><span>How modern language models work and where they fit.</span></div>
+                <div class="card"><strong>Prompt Engineering</strong><span>Writing prompts that produce reliable, useful outputs.</span></div>
+                <div class="card"><strong>Building AI Applications</strong><span>Turning an idea into a working AI product flow.</span></div>
+                <div class="card"><strong>AI Agents & Agentic Workflows</strong><span>Designing task-oriented agents and tool workflows.</span></div>
+                <div class="card"><strong>APIs & AI Integrations</strong><span>Connecting AI systems with real application backends.</span></div>
+                <div class="card"><strong>RAG & Vector Databases</strong><span>Retrieval, embeddings, and document-aware AI apps.</span></div>
+                <div class="card"><strong>Automation with AI</strong><span>Using AI to automate practical workflows.</span></div>
+                <div class="card"><strong>Local LLMs & AI Models</strong><span>Running and understanding local AI model workflows.</span></div>
+                <div class="card"><strong>Full-Stack AI Applications</strong><span>Frontend, backend, model calls, and user-facing flows.</span></div>
+                <div class="card"><strong>AI Project Development</strong><span>Planning, building, debugging, and presenting AI projects.</span></div>
+                <div class="card"><strong>Deployment & Production Basics</strong><span>Taking a prototype toward a usable deployed application.</span></div>
             </div>
 
             <div class="training-flow" aria-label="Training progression">
@@ -471,415 +2117,340 @@
                 <div class="flow-step">REAL PROJECTS</div>
                 <div class="flow-step">DEPLOY</div>
             </div>
-            <p class="training-note">Beginner-friendly | Practical | Project-based | Build while learning</p>
 
             <div class="training-panels">
-                <div class="training-panel">
-                    <h3>For colleges &amp; training institutes</h3>
-                    <p>Available for practical AI development workshops, technical sessions, bootcamps and structured training programs for students.</p>
-                    <p>Training can be adapted according to student experience level, available teaching hours and institutional requirements.</p>
+                <div class="panel">
+                    <h3>For colleges & training institutes</h3>
+                    <p>Available for practical AI development workshops, technical sessions, bootcamps, and structured training programs for students.</p>
+                    <p>Training can be adapted to student experience level, available teaching hours, and institutional requirements.</p>
                     <p>Topics can range from introductory AI development to project-based AI application and agent development.</p>
-                    <a class="project-link" href="#contact">Discuss an AI Training Program</a>
+                    <div class="section-actions">
+                        <a class="button button-dark" href="#contact">Discuss an AI Training Program</a>
+                    </div>
                 </div>
-                <div class="training-panel">
+                <div class="panel">
                     <h3>Jarvis404 Academy</h3>
-                    <h4>Want to Learn AI Development?</h4>
                     <p>Explore structured, project-based AI development training through Jarvis404 Academy.</p>
-                    <p>Learn how to build AI applications, work with AI agents and develop practical projects from the ground up.</p>
-                    <a class="project-link" href="https://courses.jarvis404.com/" target="_blank" rel="noopener">Explore Jarvis404 Academy -&gt;</a>
-                    <a class="project-link" href="https://courses.jarvis404.com/courses/ai-developer-bootcamp" target="_blank" rel="noopener">View AI Developer Bootcamp -&gt;</a>
+                    <p>Learn how to build AI applications, work with AI agents, and develop practical projects from the ground up.</p>
+                    <div class="section-actions">
+                        <a class="button button-primary" href="https://courses.jarvis404.com/" target="_blank" rel="noopener">Explore Jarvis404 Academy</a>
+                        <a class="button button-light" href="https://courses.jarvis404.com/courses/ai-developer-bootcamp" target="_blank" rel="noopener">View AI Developer Bootcamp</a>
+                    </div>
                 </div>
-            </div>
-            <p class="training-note"><strong>Teaching is backed by hands-on development and real project experience.</strong></p>
-            <div class="section-actions">
-                <a class="btn-primary" href="#projects">View My Projects -&gt;</a>
             </div>
         </section>
 
-        <section class="education">
-            <h2>Education &amp; Certifications</h2>
+        <section class="section alt" id="education">
+            <div class="section-head">
+                <h2>Education & Certifications</h2>
+                <p>Academic base and learning milestones that support the technical work.</p>
+            </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>B.Sc. Computer Science</h3>
                         <p class="timeline-date">Poona College, Pune (2024-2027)</p>
-                        <p>Relevant Coursework: Data Structures, Algorithms, Web Development, Cybersecurity, Database Management</p>
+                        <p>Relevant coursework: Data Structures, Algorithms, Web Development, Cybersecurity, Database Management.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Certifications</h3>
+                        <h3>Certifications & Recognition</h3>
                         <ul>
                             <li>Python for Data Science (Coursera)</li>
                             <li>Web Security Fundamentals (freeCodeCamp)</li>
                             <li>JavaScript Algorithms and Data Structures</li>
-                            <li>IoT Course (Achieved #1 Rank!) by IAO-USA Accredited Courses</li>
-                            <li>Technovate for India Achieved TOP #5 Rank!</li>
-                            <li>Aavishkar 2024 Zonal level research project competition (Achieved #17 Rank! All over Maharashtra in Pure Science)</li>
-                            <li>Aavishkar 2024 Zonal level research project competition (Achieved #20 Rank! All over Maharashtra in Humanities language and arts)</li> 
-                           
-
-
+                            <li>IoT Course by IAO-USA Accredited Courses</li>
+                            <li>Technovate for India, Top 5 Rank</li>
+                            <li>Aavishkar 2024 zonal-level research project competition</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <section class="llm-family-blue" style="padding:20px; border-radius:12px; color:#000000; font-family: Georgia, 'Times New Roman', Times, serif;">
-            <h2 style="text-align:center; font-size:1.6em; margin-bottom:15px; color: #000000;">Jarvis404 LLM Family</h2>
-        
-            <div style="display:flex; flex-direction:column; gap:10px;">
-        
-                 <!-- Jarvis404-llm-v01-8b -->
-                <div style="background: rgba(0,255,255,0.05); padding:12px; border-radius:6px; border-left:3px solid #3498db;">
-                    <h3 style="margin:0 0 6px 0; color:#000000;">Jarvis404-llm-v01-8b</h3>
-                    <p style="margin:0 0 5px 0;">Great for casual chats, emotional support, and maintaining conversation context over multiple turns.</p>
-                    <p style="margin:0; font-style:italic;">Link: <a href="https://ollama.com/fawzan/Jarvis404-llm-v01-8b" target="_blank" style="color:#000000;">Run on Ollama</a></p>
-                   
+        <section class="section dark" id="llm-family">
+            <div class="section-head">
+                <h2>Jarvis404 LLM Family</h2>
+                <p>Local model experiments and companion-style AI systems built as part of the Jarvis404 ecosystem.</p>
+            </div>
+            <div class="grid llm-grid">
+                <div class="card llm-card">
+                    <strong>Jarvis404-llm-v01-8b</strong>
+                    <p>Useful for casual chats, emotional support, and maintaining conversation context over multiple turns.</p>
+                    <a href="https://ollama.com/fawzan/Jarvis404-llm-v01-8b" target="_blank" rel="noopener">Run on Ollama</a>
                 </div>
-
-                <!-- Jarvis404-Companion-LLM-v0.2 -->
-                <div style="background: rgba(0,255,255,0.05); padding:12px; border-radius:6px; border-left:3px solid #3498db;">
-                    <h3 style="margin:0 0 6px 0; color:#000000;">Jarvis404-Companion-LLM-v0.2 (Dolphin Edition)</h3>
-                    <p style="margin:0 0 5px 0;">Ideal for honest, emotionally aware conversations, personal advice, and meaningful dialogue.</p>
-                    <p style="margin:0; font-style:italic;">Link: <a href="https://ollama.com/fawzan/Jarvis404-companion-llmv0.2" target="_blank" style="color:#000000;">Run on Ollama</a></p>
-                    
+                <div class="card llm-card">
+                    <strong>Jarvis404-Companion-LLM-v0.2</strong>
+                    <p>Designed for emotionally aware conversations, personal advice, and meaningful dialogue.</p>
+                    <a href="https://ollama.com/fawzan/Jarvis404-companion-llmv0.2" target="_blank" rel="noopener">Run on Ollama</a>
                 </div>
-
-                <!-- Jarvis404-Companion_Q8-LLM-v0.2 (8B Dolphin Edition) -->
-                <div style="background: rgba(0,255,255,0.05); padding:12px; border-radius:6px; border-left:3px solid #3498db;">
-                    <h3 style="margin:0 0 6px 0; color:#000000;">Jarvis404-Companion_Q8-LLM-v0.2 (8B Dolphin Edition)</h3>
-                    <p style="margin:0 0 5px 0;">Perfect for deep conversations, raw no-filter chats, and personal reflection support.</p>
-                    <p style="margin:0; font-style:italic;">Link: <a href="https://ollama.com/fawzan/Jarvis404-companion_Q8-llmv0.2" target="_blank" style="color:#000000;">Run on Ollama</a></p>
-                    
+                <div class="card llm-card">
+                    <strong>Jarvis404-Companion_Q8-LLM-v0.2</strong>
+                    <p>Built for deeper conversations, personal reflection support, and richer local companion workflows.</p>
+                    <a href="https://ollama.com/fawzan/Jarvis404-companion_Q8-llmv0.2" target="_blank" rel="noopener">Run on Ollama</a>
                 </div>
-            </div><p style="margin-top:6px; font-weight:bold;">Made with ❤️ by Fawzan Khan (404) ❤️</p>
-        </section>
-        
-
-       <section class="projects" id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-
-      <!-- Jarvis 404 – Core AI Automation System -->
-      <div class="project-card">
-        <h3>Jarvis 404 – Core AI Automation System</h3>
-        <p>The first generation of the Jarvis AI Evolution — a locally running assistant capable of voice and gesture interactions, task automation, and intelligent decision‑making.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Voice and gesture control integration</li>
-            <li>Real‑time task automation and system management</li>
-            <li>Smart reminders and notifications</li>
-            <li>Conversational feedback engine</li>
-        </ul>
-        <p><strong>Language:</strong> Python</p>
-        <p><strong>Status:</strong> Private Repository</p>
-        <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
-        <div class="project-images" style="display:none;">
-            <a href="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" target="_blank">
-                <img src="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-            <a href="https://i.ibb.co/f5GrHns/jarvis-GUO.png" target="_blank">
-                <img src="https://i.ibb.co/f5GrHns/jarvis-GUO.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-            <a href="https://i.ibb.co/hjWcYX1/jarvismainimg.png" target="_blank">
-                <img src="https://i.ibb.co/hjWcYX1/jarvismainimg.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-        </div>
-    </div>
-
-    <!-- Jarvis 4H – Emotional Intelligence Module -->
-    <div class="project-card">
-        <h3>Jarvis 4H – Emotion and Sentiment Module</h3>
-        <p>An advanced extension of Jarvis 404 that adds emotion recognition and contextual understanding, giving conversations human‑like sensitivity and tone awareness.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Emotion and sentiment analysis</li>
-            <li>Adaptive conversation style based on mood</li>
-            <li>Dynamic context handling and recall</li>
-            <li>Personalized responsive interaction</li>
-        </ul>
-        <p><strong>Language:</strong> Python</p>
-        <p><strong>Status:</strong> Private Repository</p>
-        <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
-        <div class="project-images" style="display:none;">
-            <a href="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" target="_blank">
-                <img src="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-        </div>
-    </div>
-
-    <!-- Relationship Assistant -->
-    <div class="project-card">
-        <h3>Relationship Assistant – AI Memory Companion</h3>
-        <p>An intelligent AI companion that remembers preferences, important dates, and shared moments to help users maintain stronger personal connections.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Personal memory and recall system</li>
-            <li>Emotionally supportive dialog patterns</li>
-            <li>Relationship and event reminders</li>
-            <li>Adaptive response logic</li>
-        </ul>
-        <p><strong>Language:</strong> Python</p>
-        <p><strong>Status:</strong> Private Repository</p>
-    </div>
-
-    <!-- Karen – Personal AI Companion -->
-    <div class="project-card">
-        <h3>Karen – Personal AI Companion</h3>
-        <p>A friendly assistant designed for daily interaction and motivation. Karen offers a light‑hearted personality with helpful, empathetic conversation for everyday use.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Interactive personality and friendly tone</li>
-            <li>Daily motivation and updates</li>
-            <li>Always‑on multi‑device support</li>
-            <li>Fast, lightweight design</li>
-        </ul>
-        <p><strong>Language:</strong> Python</p>
-        <p><strong>Status:</strong> Live (Private Deployment)</p>
-    </div>
-
-    <!-- Innovate 4H – Mental Health AI -->
-    <div class="project-card">
-        <h3>Innovate 4H – Mental Health Support AI</h3>
-        <p>An empathetic digital companion for mental well‑being that encourages conversation, motivation, and self‑awareness through supportive communication.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Emotionally supportive responses</li>
-            <li>Motivational daily check‑ins</li>
-            <li>Private communication environment</li>
-            <li>Lightweight and accessible structure</li>
-        </ul>
-        <p><strong>Language:</strong> Python</p>
-        <p><strong>Status:</strong> Active (Private)</p>
-    </div>
-
-    <!-- Cryptocurrency Trading Bot -->
-    <div class="project-card">
-        <h3>Cryptocurrency Trading Bot</h3>
-        <p>An automated trading bot that analyzes market data and executes trades based on custom strategies for optimized performance and risk management.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Market analysis and strategy execution</li>
-            <li>Dynamic buy/sell logic with logging</li>
-            <li>Performance tracking dashboard</li>
-            <li>Risk control algorithms</li>
-        </ul>
-        <p><strong>Language:</strong> Python</p>
-        <p><strong>Status:</strong> Private Repository</p>
-        <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
-        <div class="project-images" style="display:none;">
-            <a href="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" target="_blank">
-                <img src="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" style="width:180px;height:auto;margin:4px;">
-            </a>
-        </div>
-    </div>
-
-    <!-- Track 404 -->
-    <div class="project-card">
-        <h3>Track 404 – Real‑Time Tracking System</h3>
-        <p>A real‑time monitoring solution featuring a custom dashboard that visualizes object movement and provides live alerts for security and analytics.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Live tracking and visualization</li>
-            <li>Custom data dashboard</li>
-            <li>Alert and notification control</li>
-            <li>Performance log system</li>
-        </ul>
-        <p><strong>Language:</strong> Python & JavaScript</p>
-        <p><strong>Status:</strong> Private Repository</p>
-        <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
-        <div class="project-images" style="display:none;">
-            <a href="https://i.ibb.co/CtJkqhF/Track404-img.png" target="_blank">
-                <img src="https://i.ibb.co/CtJkqhF/Track404-img.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-            <a href="https://i.ibb.co/TKGVgq6/Track404-img2.png" target="_blank">
-                <img src="https://i.ibb.co/TKGVgq6/Track404-img2.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-        </div>
-    </div>
-
-    <!-- Connect Peace -->
-    <div class="project-card">
-        <h3>Connect Peace – Privacy‑Focused Social Platform</h3>
-        <p>A minimalistic, privacy‑centered social platform that allows users to connect and communicate securely without storing personal data or tracking usage.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Anonymous accounts and conversations</li>
-            <li>No data retention or analytics</li>
-            <li>Clean and intuitive design</li>
-            <li>Freedom of expression with privacy</li>
-        </ul>
-        <p><strong>Language:</strong> JavaScript & Python</p>
-       <p><strong>Status:</strong> Private Repository  (Relaunching soon — because the future deserves an upgrade)</p>
-        <a href="#" class="project-link" onclick="toggleImages(this)">View Images</a>
-        <div class="project-images" style="display:none;">
-            <a href="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" target="_blank">
-                <img src="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-            <a href="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" target="_blank">
-                <img src="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-            <a href="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" target="_blank">
-                <img src="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" style="width:180px;height:auto;margin:4px;">
-            </a>
-        </div>
-    </div>
-
-    <!-- Schedule Tracker -->
-    <div class="project-card">
-        <h3>Schedule Tracker</h3>
-        <p>A simple and efficient task management web app featuring reminders, priority tagging, and a dark interface designed for daily productivity.</p>
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Task creation and prioritization</li>
-            <li>Real‑time alerts and notifications</li>
-            <li>Clean neon‑styled dark UI</li>
-            <li>Responsive design for all devices</li>
-        </ul>
-        <p><strong>Language:</strong> HTML / CSS / JavaScript</p>
-        <p><strong>Status:</strong> Completed</p>
-        <a href="#" class="project-link" onclick="toggleImages(this)">View Image</a>
-        <div class="project-images" style="display:none;">
-            <a href="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" target="_blank">
-                <img src="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" style="width:180px;height:auto;margin:4px;">
-            </a>
-        </div>
-    </div>
-
-</div>
-</section>
-
-        <section class="languages">
-            <h2>Languages</h2>
-            <p><strong>English:</strong> Fluent</p>
-            <p><strong>Roman Urdu:</strong> Fluent</p>
+            </div>
         </section>
 
-        <section class="hobbies">
-            <h2>Hobbies</h2>
-            <ul>
-                <li>Developing AI-driven applications</li>
-                <li>To Build Automation for Doing Daily Life and Various Tasks</li>
-                <li>Free Fire Esports Player</li>
-                <li>Going to the gym</li>
-            </ul>
+        <section class="section" id="projects">
+            <div class="section-head">
+                <h2>Projects</h2>
+                <p>Selected work showing AI, automation, privacy-focused software, dashboards, and practical application building.</p>
+            </div>
+            <div class="grid project-grid">
+                <article class="card project-card">
+                    <h3>Jarvis404 - Core AI Automation System</h3>
+                    <p>A locally running assistant capable of voice and gesture interactions, task automation, and intelligent decision-making.</p>
+                    <div class="project-meta"><span>Python</span><span>Private Repository</span></div>
+                    <button class="image-toggle" type="button">View Images</button>
+                    <div class="project-images">
+                        <a href="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/wN05V2nC/jarvis-gesture-control.png" alt="Jarvis gesture control interface"></a>
+                        <a href="https://i.ibb.co/f5GrHns/jarvis-GUO.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/f5GrHns/jarvis-GUO.png" alt="Jarvis graphical interface"></a>
+                        <a href="https://i.ibb.co/hjWcYX1/jarvismainimg.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/hjWcYX1/jarvismainimg.png" alt="Jarvis main screen"></a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Jarvis4H - Emotion and Sentiment Module</h3>
+                    <p>An extension of Jarvis404 that adds emotion recognition and contextual tone awareness to conversations.</p>
+                    <div class="project-meta"><span>Python</span><span>Private Repository</span></div>
+                    <button class="image-toggle" type="button">View Image</button>
+                    <div class="project-images">
+                        <a href="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/k2mjTYqF/Jarvis4h.png" alt="Jarvis4H project interface"></a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Relationship Assistant - AI Memory Companion</h3>
+                    <p>An AI companion concept that remembers preferences, dates, and shared moments to support personal connection workflows.</p>
+                    <div class="project-meta"><span>Python</span><span>Private Repository</span></div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Karen - Personal AI Companion</h3>
+                    <p>A daily-interaction assistant with a friendly tone, lightweight design, and helpful conversational flow.</p>
+                    <div class="project-meta"><span>Python</span><span>Private Deployment</span></div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Innovate4H - Mental Health Support AI</h3>
+                    <p>A supportive digital companion designed for conversation, motivation, and self-awareness workflows.</p>
+                    <div class="project-meta"><span>Python</span><span>Active Private Project</span></div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Cryptocurrency Trading Bot</h3>
+                    <p>An automated bot that analyzes market data and executes custom strategy logic with tracking and risk controls.</p>
+                    <div class="project-meta"><span>Python</span><span>Private Repository</span></div>
+                    <button class="image-toggle" type="button">View Image</button>
+                    <div class="project-images">
+                        <a href="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/sdv09Z5y/cryptobot.jpg" alt="Crypto bot project screen"></a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Track404 - Real-Time Tracking System</h3>
+                    <p>A monitoring solution with a custom dashboard for movement visualization, alerts, and analytics workflows.</p>
+                    <div class="project-meta"><span>Python</span><span>JavaScript</span><span>Private Repository</span></div>
+                    <button class="image-toggle" type="button">View Images</button>
+                    <div class="project-images">
+                        <a href="https://i.ibb.co/CtJkqhF/Track404-img.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/CtJkqhF/Track404-img.png" alt="Track404 dashboard screen"></a>
+                        <a href="https://i.ibb.co/TKGVgq6/Track404-img2.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/TKGVgq6/Track404-img2.png" alt="Track404 tracking screen"></a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>ConnectPeace - Privacy-Focused Social Platform</h3>
+                    <p>A minimal privacy-centered platform for secure connection and communication without storing personal data or tracking usage.</p>
+                    <div class="project-meta"><span>JavaScript</span><span>Python</span><span>Private Repository</span></div>
+                    <button class="image-toggle" type="button">View Images</button>
+                    <div class="project-images">
+                        <a href="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/B2jrNkWH/connect-peace-img.png" alt="ConnectPeace interface screen"></a>
+                        <a href="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/n8s7YLkp/connect-peace-img2.png" alt="ConnectPeace secondary screen"></a>
+                        <a href="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" target="_blank" rel="noopener"><img src="https://i.ibb.co/WNC0dQfV/connect-peace-img3.png" alt="ConnectPeace feature screen"></a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Schedule Tracker</h3>
+                    <p>A task management web app with reminders, priority tagging, alerts, and a responsive dark interface for daily productivity.</p>
+                    <div class="project-meta"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                    <button class="image-toggle" type="button">View Image</button>
+                    <div class="project-images">
+                        <a href="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/3mJTJSBs/trackerimg.jpg" alt="Schedule Tracker app screen"></a>
+                    </div>
+                </article>
+            </div>
         </section>
 
-        <a href="#" class="download-btn" onclick="downloadHTML()">Download Resume</a>
+        <section class="section alt" id="details">
+            <div class="section-head">
+                <h2>Languages</h2>
+                <p>Communication languages and working focus.</p>
+            </div>
+            <div class="grid compact-grid">
+                <div class="card"><strong>English</strong><span>Fluent</span></div>
+                <div class="card"><strong>Roman Urdu</strong><span>Fluent</span></div>
+                <div class="card"><strong>Working Interests</strong><span>AI applications, automation systems, practical AI products, technical sessions, and project-based learning.</span></div>
+            </div>
+        </section>
 
-    <footer class="footer">
-        <p>&copy; 2026 Fawzan Khan | Building practical AI systems, automation workflows, and AI training.</p>
-    </footer>
-    </div>
+        <section class="cta">
+            <div>
+                <h2>Need a practical AI session or project demo?</h2>
+                <p>For colleges, institutes, student groups, and teams that want practical AI development workshops or a technical session connected to real project building.</p>
+            </div>
+            <div class="cta-actions">
+                <a class="button button-primary" href="mailto:jarvis404.dev@gmail.com">Contact Me</a>
+                <a class="button button-secondary" href="#projects">View Projects</a>
+                <a class="button button-secondary" href="#" id="download-resume">Download Resume</a>
+            </div>
+        </section>
 
-   <script>
+        <footer class="footer">
+            &copy; 2026 Fawzan Khan | Building practical AI systems, automation workflows, and AI training.
+        </footer>
+    </main>
 
-    function downloadHTML() {
-        const htmlContent = document.documentElement.outerHTML;
-        const blob = new Blob([htmlContent], { type: 'text/html' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'FawzanKhan_Resume.html';
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-        document.body.removeChild(a);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        projectCards.forEach(card => {
-            const viewImageLink = card.querySelector('.project-link:not([target="_blank"])');
-            const images = card.querySelector('.project-images');
-            
-            if (viewImageLink && images) {
-                viewImageLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    images.style.display = images.style.display === "none" || images.style.display === "" ? "block" : "none";
-                });
-            }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.querySelectorAll(".image-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+                const gallery = button.nextElementSibling;
+                if (!gallery) return;
+                gallery.classList.toggle("is-open");
+                button.textContent = gallery.classList.contains("is-open") ? "Hide Images" : button.dataset.label || button.textContent;
+            });
+            button.dataset.label = button.textContent;
         });
-    });
 
-    const canvas = document.createElement('canvas');
-    document.body.prepend(canvas);
-    const ctx = canvas.getContext('2d');
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.zIndex = '-1';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+        document.getElementById("download-resume").addEventListener("click", (event) => {
+            event.preventDefault();
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: "text/html" });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "FawzanKhan_Resume.html";
+            document.body.appendChild(link);
+            link.click();
+            window.URL.revokeObjectURL(url);
+            link.remove();
+        });
 
-    let particles = [];
-    const num = 100;
+        function initMotion() {
+            if (!window.gsap || !window.ScrollTrigger) return;
 
-    function initParticles() {
-        particles = [];
-        for (let i = 0; i < num; i++) {
-            const x = Math.random() * canvas.width;
-            const y = Math.random() * canvas.height;
-            const vx = (Math.random() - 0.5) * 1.5;
-            const vy = (Math.random() - 0.5) * 1.5;
-            const size = Math.random() * 2 + 1;
-            particles.push({x, y, vx, vy, size});
-        }
-    }
+            gsap.registerPlugin(ScrollTrigger);
 
-    function updateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < num; i++) {
-            const p = particles[i];
-            p.x += p.vx;
-            p.y += p.vy;
+            gsap.from(".site-nav", {
+                y: -18,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power3.out"
+            });
 
-            // Wrap edges
-            if (p.x < 0) p.x = canvas.width;
-            if (p.x > canvas.width) p.x = 0;
-            if (p.y < 0) p.y = canvas.height;
-            if (p.y > canvas.height) p.y = 0;
+            gsap.from(".hero h1, .role, .capability, .contact-strip, .hero-actions", {
+                y: 28,
+                opacity: 0,
+                duration: 0.9,
+                stagger: 0.08,
+                ease: "power3.out"
+            });
 
-            // Draw particle
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 255, 255, 0.6)';
-            ctx.fill();
+            gsap.from(".system-card > *", {
+                y: 36,
+                scale: 0.94,
+                opacity: 0,
+                duration: 0.9,
+                stagger: 0.12,
+                delay: 0.2,
+                ease: "power3.out"
+            });
 
-            // Draw soft connections
-            for (let j = i + 1; j < num; j++) {
-                const p2 = particles[j];
-                const dx = p.x - p2.x;
-                const dy = p.y - p2.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 100) {
-                    ctx.strokeStyle = `rgba(52, 152, 219, ${1 - dist / 100})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.beginPath();
-                    ctx.moveTo(p.x, p.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
+            gsap.from(".floating-window, .room-plane, .depth-ray", {
+                y: 22,
+                opacity: 0,
+                scale: 0.94,
+                duration: 1.1,
+                stagger: 0.08,
+                ease: "power3.out"
+            });
+
+            gsap.to(".floating-window.one", {
+                y: -10,
+                x: 6,
+                repeat: -1,
+                yoyo: true,
+                duration: 4.8,
+                ease: "sine.inOut"
+            });
+
+            gsap.to(".floating-window.two", {
+                y: 12,
+                x: -5,
+                repeat: -1,
+                yoyo: true,
+                duration: 5.6,
+                ease: "sine.inOut"
+            });
+
+            gsap.utils.toArray(".section").forEach((section) => {
+                gsap.from(section.querySelectorAll("h2, .section-head p"), {
+                    y: 28,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.08,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 82%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+
+            gsap.utils.toArray(".card, .panel, .timeline-content").forEach((card) => {
+                gsap.fromTo(card,
+                    { y: 38, scale: 0.96, opacity: 0 },
+                    {
+                        y: 0,
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 90%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+
+            gsap.from(".training-intro", {
+                y: 18,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.08,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#ai-training",
+                    start: "top 82%",
+                    toggleActions: "play none none reverse"
                 }
-            }
+            });
         }
-        requestAnimationFrame(updateParticles);
-    }
 
-    window.addEventListener('resize', () => {
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
-        initParticles();
-    });
-
-    initParticles();
-    updateParticles();
-</script>
-</body></html>
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initMotion);
+        } else {
+            initMotion();
+        }
+    </script>
+</body>
+</html>
