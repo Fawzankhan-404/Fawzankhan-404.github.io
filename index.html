@@ -1998,6 +1998,240 @@
                 transition-duration: 0.001ms !important;
             }
         }
+
+        @media (max-width: 560px) {
+            :root {
+                --container: 100%;
+            }
+
+            body {
+                background: #040914;
+            }
+
+            .page-shell {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                border-right: 0;
+                border-left: 0;
+                border-radius: 0;
+                overflow-x: hidden;
+            }
+
+            .page-shell,
+            .hero,
+            .hero-inner,
+            .hero-copy,
+            .system-card,
+            .section,
+            .cta,
+            .footer {
+                max-width: 100%;
+            }
+
+            .site-nav {
+                top: 8px;
+                width: calc(100% - 24px);
+                max-width: 340px;
+                padding: 6px;
+                gap: 2px;
+                border-radius: 18px;
+                overflow: hidden;
+            }
+
+            .site-nav a {
+                flex: 1 1 0;
+                min-width: 0;
+                padding: 9px 3px;
+                text-align: center;
+                font-size: 0.78rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 82px 16px 42px;
+                text-align: center;
+            }
+
+            .hero-inner {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 22px;
+                align-items: start;
+                justify-items: center;
+            }
+
+            .hero-copy {
+                width: 100%;
+                max-width: 320px;
+                transform: none;
+            }
+
+            .hero h1 {
+                max-width: 100%;
+                font-size: clamp(3.15rem, 15.6vw, 4.15rem);
+                line-height: 0.9;
+            }
+
+            .role {
+                margin-top: 18px;
+                font-size: 0.98rem;
+                line-height: 1.42;
+            }
+
+            .capability {
+                margin-top: 10px;
+                font-size: 0.94rem;
+                line-height: 1.5;
+            }
+
+            .contact-strip {
+                display: grid;
+                grid-template-columns: 1fr;
+                width: 100%;
+                max-width: 100%;
+                margin-top: 22px;
+                gap: 8px;
+            }
+
+            .contact-chip {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                min-height: 42px;
+                justify-content: center;
+                padding: 8px 12px;
+                font-size: 0.9rem;
+                overflow-wrap: anywhere;
+                white-space: normal;
+            }
+
+            .hero-actions {
+                display: grid;
+                grid-template-columns: 1fr;
+                width: 100%;
+                margin-top: 20px;
+                gap: 10px;
+            }
+
+            .hero-actions .button {
+                width: 100%;
+            }
+
+            .system-card {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                gap: 12px;
+                transform: none;
+                filter: none;
+            }
+
+            .terminal {
+                width: 100%;
+                max-width: 100%;
+                min-height: auto;
+                padding: 14px;
+                border-radius: 18px;
+                font-size: 0.78rem;
+            }
+
+            .terminal p {
+                margin: 5px 0;
+                font-size: 0.78rem;
+                line-height: 1.55;
+            }
+
+            .orbit-card {
+                width: 100%;
+                max-width: 100%;
+                min-height: 152px;
+                border-radius: 18px;
+                overflow: hidden;
+            }
+
+            .orbit-card::before {
+                inset: 28px 38px;
+            }
+
+            .orbit-core {
+                width: 70px;
+                height: 70px;
+                border-radius: 18px;
+            }
+
+            .orbit-card span {
+                padding: 6px 8px;
+                font-size: 0.7rem;
+            }
+
+            .orbit-card span:nth-of-type(1) { top: 22px; left: 22px; }
+            .orbit-card span:nth-of-type(2) { right: 34px; top: 64px; }
+            .orbit-card span:nth-of-type(3) { bottom: 25px; left: 36px; }
+            .orbit-card span:nth-of-type(4) { bottom: 30px; right: 38px; }
+
+            .capability-rail {
+                display: none;
+            }
+
+            .section,
+            .cta {
+                padding: 46px 17px;
+                overflow-x: hidden;
+            }
+
+            .section:first-of-type {
+                padding-top: 52px;
+            }
+
+            .section-head {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 22px;
+            }
+
+            h2 {
+                font-size: clamp(2rem, 11vw, 2.85rem);
+                line-height: 0.98;
+            }
+
+            .summary-copy,
+            .cta,
+            .training-panels {
+                grid-template-columns: 1fr;
+            }
+
+            .card,
+            .panel,
+            .proof-panel,
+            .timeline-content {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                border-radius: 18px;
+                padding: 18px;
+            }
+
+            .grid,
+            .skill-grid,
+            .training-grid,
+            .project-grid,
+            .compact-grid,
+            .llm-grid {
+                grid-template-columns: 1fr !important;
+                width: 100%;
+                max-width: 100%;
+                overflow: visible;
+            }
+
+            .button {
+                max-width: 100%;
+                white-space: normal;
+            }
+        }
     </style>
 </head>
 <body>
