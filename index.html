@@ -14,10 +14,19 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fawzan Khan – AI Developer & System Architect</title>
+    <title>Fawzan Khan - AI Developer, Automation Engineer & AI Training Pune</title>
+    <meta name="description" content="Fawzan Khan is an AI Developer and Automation Engineer in Pune building practical AI systems, agents, automation workflows, AI applications, and project-based AI training through Jarvis404 Academy.">
+    <meta name="keywords" content="Fawzan Khan, AI Developer Pune, AI Developer, AI Automation, AI Agents, AI Training, AI Development Training Pune, AI Workshops, Jarvis404 Academy">
+    <meta property="og:title" content="Fawzan Khan - AI Developer & Automation Engineer">
+    <meta property="og:description" content="Portfolio of Fawzan Khan: practical AI systems, automation workflows, AI agents, intelligent applications, and AI development training.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fawzankhan-404.github.io/">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
             background: linear-gradient(135deg, #0A0E14, #001F3F);
@@ -25,15 +34,27 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+        a:focus-visible {
+            outline: 3px solid #f1c40f;
+            outline-offset: 3px;
         }
         .container {
-            max-width: 800px;
+            max-width: 980px;
             width: 90%;
             margin: 0 auto;
             padding: 30px;
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container, header, section, .project-card, .skill-item, .training-card, .training-panel {
+            box-sizing: border-box;
+            max-width: 100%;
         }
         header {
             background: linear-gradient(135deg, rgb(52, 152, 219), rgb(44, 62, 80));
@@ -45,6 +66,67 @@
         header h1 {
             margin: 0;
             font-size: 2.5em;
+        }
+        .hero-role {
+            font-size: 1.1em;
+            margin: 5px auto 8px;
+            max-width: 760px;
+            line-height: 1.45;
+        }
+        .hero-capability {
+            margin: 0 auto 18px;
+            color: #edf6ff;
+            font-size: 0.98rem;
+            line-height: 1.45;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 8px;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 6px;
+            padding: 7px 12px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-1px);
+        }
+        .hero-actions, .section-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 9px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: #0d7adf;
+            color: #ffffff;
+            border: 1px solid #0d7adf;
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
         }
         .contact-info p {
             margin: 8px 0;
@@ -81,30 +163,72 @@
         }
         p, li {
             font-size: 1rem;
+            overflow-wrap: break-word;
         }
-        .skills, .projects, .experience {
+        h1, h2, h3, h4, span, a {
+            overflow-wrap: anywhere;
+        }
+        .skills, .projects, .experience, .training {
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 8px;
         }
-        .skill-item {
-            margin-bottom: 20px;
+        .skill-items, .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 12px;
         }
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
+        .skill-item, .training-card, .training-panel {
+            background: #ffffff;
+            border: 1px solid #dbe7f3;
+            border-radius: 8px;
+            padding: 14px;
+            box-shadow: 0 2px 8px rgba(14, 47, 79, 0.06);
         }
-        .progress-bar {
-            height: 10px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
+        .skill-item strong, .training-card strong {
+            display: block;
+            color: #1f3a57;
+            margin-bottom: 4px;
         }
-        .progress {
-            height: 100%;
-            background-color: #3498db;
-            border-radius: 5px;
+        .training-intro {
+            max-width: 760px;
+            color: #263849;
+        }
+        .training-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            margin: 18px 0 8px;
+        }
+        .flow-step {
+            background: linear-gradient(135deg, #0d2b45, #124c7e);
+            color: #ffffff;
+            border-radius: 7px;
+            padding: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .training-note {
+            color: #435466;
+            margin-top: 8px;
+        }
+        .training-panels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .training-panel h3 {
+            margin-top: 0;
+            color: #1f3a57;
+        }
+        .training-panel .project-link {
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .training .project-link {
+            border: 1px solid #3498db;
         }
         .project-grid {
             display: grid;
@@ -210,7 +334,36 @@
         }
         @media (max-width: 768px) {
             .container {
+                width: calc(100% - 20px);
+                padding: 18px;
+                box-sizing: border-box;
+            }
+            header {
+                overflow: hidden;
+            }
+            .contact-info a {
+                word-break: break-word;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .hero-role, .hero-capability {
+                padding: 0 8px;
+                overflow-wrap: anywhere;
+                text-wrap: balance;
+            }
+            .project-grid {
+                padding: 0;
+                gap: 18px;
+            }
+            .hero-actions, .section-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+            .btn-primary, .btn-secondary, .training-panel .project-link {
                 width: 100%;
+                box-sizing: border-box;
+                text-align: center;
             }
         }
         @keyframes fadeIn {
@@ -232,81 +385,114 @@
     <div class="container">
         <header>
             <h1>Fawzan Khan</h1>
-    <p style="font-size:1.1em;margin-top:5px;">AI Developer | Automation Engineer | Creator of Jarvis AI Ecosystem</p>
-            <div class="contact-info">
+            <p class="hero-role">AI Developer | Automation Engineer | AI Product Builder</p>
+            <p class="hero-capability">Building real AI systems | Teaching practical AI development</p>
+            <div class="contact-info" id="contact">
                 <p><i class="fas fa-map-marker-alt"></i> Pune</p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:jarvis404.dev@gmail.com">jarvis404.dev@gmail.com</a></p>
                 <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/fawzan._x1" target="_blank">Fawzan</a></p>
                 <p><i class="fab fa-github"></i> <a href="https://github.com/Fawzankhan-404" target="_blank">Fawzankhan-404</a></p>
                 <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fawzan-khan-58357a386/" target="_blank">Fawzan Khan</a></p>
             </div>
+            <nav class="nav-links" aria-label="Portfolio navigation">
+                <a href="#projects">Projects</a>
+                <a href="#ai-training">AI Training</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="hero-actions">
+                <a class="btn-primary" href="#projects">View Projects</a>
+                <a class="btn-secondary" href="#ai-training">Explore AI Training</a>
+            </div>
         </header>
 
         <section class="objective">
             <h2>Professional Summary</h2>
-            <p>Innovative B.Sc. Computer Science student and AI systems developer focused on creating technology that thinks, feels, and evolves.
-Architect of the Jarvis AI Evolution, a collection of intelligent assistants from Jarvis 404, a multimodal automation AI, to Innovate 4H, a mental‑health companion built with emotional intelligence.
-Each advancement integrates deeper reasoning, empathy, memory, and user connection, redefining personal AI beyond conventional models.
-Skilled in artificial intelligence, automation, large language models, and human‑AI interaction, with a passion for designing systems that bridge logic and emotion.</p>
+            <p>B.Sc. Computer Science student and AI systems developer focused on practical AI applications, automation workflows, local assistants, and human-AI interaction. I build systems around Python, JavaScript, large language models, voice interfaces, task automation, and product-focused AI workflows.</p>
+            <p>My work includes the Jarvis404 AI ecosystem, local assistant experiments, automation tools, and intelligent applications. I also teach practical AI development in a project-based format for students, colleges, institutes, and beginner developers.</p>
         </section>
 
         <section class="skills">
             <h2>Technical Skills</h2>
             <div class="skill-items">
                 <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Programming Languages (JavaScript, Python, C)</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
+                    <strong>Programming</strong>
+                    <span>Python, JavaScript, C</span>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Web Development (HTML, CSS, React.js, Node.js, Firebase)</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
+                    <strong>Web Development</strong>
+                    <span>HTML, CSS, React.js, Node.js, Firebase</span>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info">
-                        <span>AI , Voice Interaction (Python, Machine Learning) &amp; NLP , LLM </span>
-                        <span>85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
+                    <strong>AI Systems</strong>
+                    <span>LLMs, NLP, voice interaction, machine learning workflows</span>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Cybersecurity (Secure Coding, Network Security)</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
+                    <strong>Security Basics</strong>
+                    <span>Secure coding, network security fundamentals</span>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Data Science &amp; Analytics (SQL, Data Visualization)</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
+                    <strong>Data &amp; Analytics</strong>
+                    <span>SQL, data visualization, structured analysis</span>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-info">
-                        <span>Development Tools (Git, VS Code, Jupyter Notebook)</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
+                    <strong>Development Tools</strong>
+                    <span>Git, VS Code, Jupyter Notebook</span>
                 </div>
+            </div>
+        </section>
+
+        <section class="training" id="ai-training">
+            <h2>AI DEVELOPMENT &amp; TRAINING</h2>
+            <h3>Building AI. Teaching how it's built.</h3>
+            <p class="training-intro">Alongside building AI applications and automation systems, I provide practical AI development training focused on helping students and beginners understand how modern AI products are actually built.</p>
+            <p class="training-intro">The approach is project-driven: learn the concepts, understand the technology, build working applications, and deploy real projects.</p>
+
+            <div class="training-grid" aria-label="AI development training topics">
+                <div class="training-card"><strong>Python for AI Development</strong><span>Core Python patterns used in practical AI apps.</span></div>
+                <div class="training-card"><strong>Generative AI &amp; LLM Fundamentals</strong><span>How modern language models work and where they fit.</span></div>
+                <div class="training-card"><strong>Prompt Engineering</strong><span>Writing prompts that produce reliable, useful outputs.</span></div>
+                <div class="training-card"><strong>Building AI Applications</strong><span>Turning an idea into a working AI product flow.</span></div>
+                <div class="training-card"><strong>AI Agents &amp; Agentic Workflows</strong><span>Designing task-oriented agents and tool workflows.</span></div>
+                <div class="training-card"><strong>APIs &amp; AI Integrations</strong><span>Connecting AI systems with real application backends.</span></div>
+                <div class="training-card"><strong>RAG &amp; Vector Databases</strong><span>Retrieval, embeddings, and document-aware AI apps.</span></div>
+                <div class="training-card"><strong>Automation with AI</strong><span>Using AI to automate practical business and student workflows.</span></div>
+                <div class="training-card"><strong>Local LLMs &amp; AI Models</strong><span>Running and understanding local AI model workflows.</span></div>
+                <div class="training-card"><strong>Full-Stack AI Applications</strong><span>Frontend, backend, model calls, and user-facing flows.</span></div>
+                <div class="training-card"><strong>AI Project Development</strong><span>Planning, building, debugging, and presenting AI projects.</span></div>
+                <div class="training-card"><strong>Deployment &amp; Production Basics</strong><span>Taking a prototype toward a usable deployed application.</span></div>
+            </div>
+
+            <div class="training-flow" aria-label="Training progression">
+                <div class="flow-step">BEGINNER</div>
+                <div class="flow-step">FOUNDATIONS</div>
+                <div class="flow-step">BUILD</div>
+                <div class="flow-step">AI APPLICATIONS</div>
+                <div class="flow-step">AI AGENTS</div>
+                <div class="flow-step">REAL PROJECTS</div>
+                <div class="flow-step">DEPLOY</div>
+            </div>
+            <p class="training-note">Beginner-friendly | Practical | Project-based | Build while learning</p>
+
+            <div class="training-panels">
+                <div class="training-panel">
+                    <h3>For colleges &amp; training institutes</h3>
+                    <p>Available for practical AI development workshops, technical sessions, bootcamps and structured training programs for students.</p>
+                    <p>Training can be adapted according to student experience level, available teaching hours and institutional requirements.</p>
+                    <p>Topics can range from introductory AI development to project-based AI application and agent development.</p>
+                    <a class="project-link" href="#contact">Discuss an AI Training Program</a>
+                </div>
+                <div class="training-panel">
+                    <h3>Jarvis404 Academy</h3>
+                    <h4>Want to Learn AI Development?</h4>
+                    <p>Explore structured, project-based AI development training through Jarvis404 Academy.</p>
+                    <p>Learn how to build AI applications, work with AI agents and develop practical projects from the ground up.</p>
+                    <a class="project-link" href="https://courses.jarvis404.com/" target="_blank" rel="noopener">Explore Jarvis404 Academy -&gt;</a>
+                    <a class="project-link" href="https://courses.jarvis404.com/courses/ai-developer-bootcamp" target="_blank" rel="noopener">View AI Developer Bootcamp -&gt;</a>
+                </div>
+            </div>
+            <p class="training-note"><strong>Teaching is backed by hands-on development and real project experience.</strong></p>
+            <div class="section-actions">
+                <a class="btn-primary" href="#projects">View My Projects -&gt;</a>
             </div>
         </section>
 
@@ -375,7 +561,7 @@ Skilled in artificial intelligence, automation, large language models, and human
         </section>
         
 
-       <section class="projects">
+       <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
 
@@ -587,7 +773,7 @@ Skilled in artificial intelligence, automation, large language models, and human
         <a href="#" class="download-btn" onclick="downloadHTML()">Download Resume</a>
 
     <footer class="footer">
-        <p>© 2025 Fawzan Khan | Innovating AI systems that think, feel and evolve.</p>
+        <p>&copy; 2026 Fawzan Khan | Building practical AI systems, automation workflows, and AI training.</p>
     </footer>
     </div>
 
