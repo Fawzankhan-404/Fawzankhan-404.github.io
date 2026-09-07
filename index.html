@@ -362,6 +362,8 @@
 
         .contact-chip {
             display: inline-flex;
+            position: relative;
+            z-index: 5;
             align-items: center;
             gap: 8px;
             min-height: 40px;
@@ -373,6 +375,16 @@
             backdrop-filter: blur(16px);
             font-size: 0.94rem;
             font-weight: 700;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        a.contact-chip:hover,
+        a.contact-chip:focus-visible {
+            color: #ffffff;
+            border-color: rgba(147, 255, 208, 0.72);
+            background: rgba(255, 255, 255, 0.17);
+            transform: translateY(-2px);
         }
 
         .system-card {
@@ -2258,10 +2270,9 @@
 
                     <div class="contact-strip" id="contact">
                         <span class="contact-chip"><i class="fas fa-map-marker-alt"></i> Pune</span>
-                        <a class="contact-chip" href="mailto:jarvis404.dev@gmail.com"><i class="fas fa-envelope"></i> jarvis404.dev@gmail.com</a>
-                        <a class="contact-chip" href="https://www.instagram.com/fawzan._x1" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Fawzan</a>
-                        <a class="contact-chip" href="https://github.com/Fawzankhan-404" target="_blank" rel="noopener"><i class="fab fa-github"></i> Fawzankhan-404</a>
-                        <a class="contact-chip" href="https://www.linkedin.com/in/fawzan-khan-58357a386/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> Fawzan Khan</a>
+                        <a class="contact-chip" href="mailto:jarvis404.dev@gmail.com" aria-label="Email Fawzan Khan at jarvis404.dev@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> jarvis404.dev@gmail.com</a>
+                        <a class="contact-chip" href="https://www.instagram.com/fawzan._x1/" target="_blank" rel="noopener noreferrer" aria-label="Open Fawzan's Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i> @fawzan._x1</a>
+                        <a class="contact-chip" href="https://github.com/Fawzankhan-404" target="_blank" rel="noopener noreferrer" aria-label="Open Fawzan's GitHub profile"><i class="fab fa-github" aria-hidden="true"></i> Fawzankhan-404</a>
                     </div>
 
                     <div class="hero-actions">
@@ -2456,6 +2467,24 @@
                 <p>Selected work showing AI, automation, privacy-focused software, dashboards, and practical application building.</p>
             </div>
             <div class="grid project-grid">
+                <article class="card project-card">
+                    <h3>JustSpeak - Live AI English Tutor</h3>
+                    <p>A real-time spoken-English practice app powered by LiveKit Cloud and an AI tutor named Edith, with structured speaking feedback and live captions.</p>
+                    <div class="project-meta"><span>Next.js</span><span>Python</span><span>LiveKit</span><span>Private Project</span></div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Sara AI - Real-Time Voice Assistant</h3>
+                    <p>A low-latency voice assistant that combines live audio conversations, transcription, and intelligent tool-driven workflows.</p>
+                    <div class="project-meta"><span>Python</span><span>LiveKit</span><span>Gemini</span><span>Private Project</span></div>
+                </article>
+
+                <article class="card project-card">
+                    <h3>Jarvis404 Academy</h3>
+                    <p>A practical learning platform for AI foundations, project-based development, and production-minded automation skills.</p>
+                    <div class="project-meta"><span>React</span><span>Cloudflare</span><span>AI Education</span><span>Active Project</span></div>
+                </article>
+
                 <article class="card project-card">
                     <h3>Jarvis404 - Core AI Automation System</h3>
                     <p>A locally running assistant capable of voice and gesture interactions, task automation, and intelligent decision-making.</p>
